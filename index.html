@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mixxx DJ para Android 🎧 | JaviLabarumDJ Official</title>
+  <meta name="description" content="Descarga Mixxx DJ para Android por JaviLabarumDJ. Software profesional de DJing de código abierto optimizado para pantallas táctiles, modo Pioneer XDJ-RX3 y controladoras USB.">
+  <meta name="keywords" content="Mixxx Android, DJ Android, JaviLabarumDJ, Pioneer RX3 Android, Split Cue DJ, Mezclar música Android, APK Mixxx">
+  <meta name="theme-color" content="#08090d">
+  
+  <!-- Open Graph / Instagram / WhatsApp preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://javilabarumdj.github.io/">
+  <meta property="og:title" content="Mixxx DJ Android 🎧 | Tu cabina DJ profesional en el móvil">
+  <meta property="og:description" content="Descarga el APK oficial v1.0.0. Modo Pioneer XDJ-RX3, soporte para controladoras USB MIDI y Split Cue. ¡Totalmente gratis!">
+  <meta property="og:image" content="assets/tablet_wave_mode.png">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient glow background -->
+  <div class="ambient-glow cyan" aria-hidden="true"></div>
+  <div class="ambient-glow orange" aria-hidden="true"></div>
+  
+  <!-- Audio spectrum canvas header background -->
+  <canvas id="audioVisualizer" aria-hidden="true"></canvas>
+
+  <!-- Sticky Glass Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand" aria-label="JaviLabarumDJ Inicio">
+        <img src="assets/logo.svg" alt="Mixxx DJ Logo" class="brand-logo" width="36" height="36">
+        <div class="brand-text">
+          <span class="brand-name">MIXXX <span class="brand-accent">ANDROID</span></span>
+          <span class="brand-author">by JaviLabarumDJ</span>
+        </div>
+      </a>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="#features">Funciones</a>
+        <a href="#showcase">Modos</a>
+        <a href="#installation">Cómo Instalar</a>
+        <a href="#specs">Requisitos</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/JaviLabarumDJ/mixxx-android" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="Ver en GitHub" title="Ver código en GitHub">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="#download" class="btn-primary nav-download-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Descargar APK</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-container">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>RELEASE OFICIAL v1.0.0 &bull; ANDROID 10 A 15+</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Tu Cabina DJ Profesional<br>
+          <span class="gradient-text">En Tu Móvil y Tablet</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          El legendario software open-source <strong>Mixxx</strong> adaptado para pantallas táctiles y controladoras USB. Con el nuevo modo de ondas <strong>Pioneer XDJ-RX3</strong>, <strong>Split Cue</strong> y motor de audio a 32-bit de ultra-baja latencia.
+        </p>
+
+        <!-- Main Call To Action Box -->
+        <div class="hero-cta-group" id="download">
+          <a href="https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.0.0-android/mixxx-android-v1.0.0.apk" class="btn-hero-download" id="apkDownloadBtn">
+            <div class="btn-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <div class="btn-text-content">
+              <span class="btn-title">DESCARGAR APK OFICIAL</span>
+              <span class="btn-meta">v1.0.0 &bull; ARM64 &bull; 248 MB &bull; Gratis & 100% Libre</span>
+            </div>
+          </a>
+
+          <div class="secondary-actions">
+            <button class="btn-secondary" id="shareBtn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              <span>Copiar Enlace</span>
+            </button>
+            <a href="https://github.com/JaviLabarumDJ/mixxx-android/releases/tag/v1.0.0-android" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Notas de la Release</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="social-proof-badges">
+          <div class="proof-badge">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="#00e5ff"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 6h2v2h-2z"/></svg>
+            <span>Probado en POCO X6 Pro y Lenovo Pad</span>
+          </div>
+          <div class="proof-badge">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="#00e676"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <span>Firmado Oficialmente &bull; Sin Publicidad</span>
+          </div>
+          <div class="proof-badge">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="#ff5722"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            <span>Código Abierto GPL v2</span>
+          </div>
+        </div>
+
+        <!-- Interactive Mockup Showcase -->
+        <div class="mockup-section" id="showcase">
+          <div class="mockup-controls">
+            <button class="mockup-tab active" data-mode="tablet-wave">
+              <span class="tab-icon">🌊</span>
+              <span>Modo WAVE (XDJ-RX3)</span>
+            </button>
+            <button class="mockup-tab" data-mode="tablet-dj">
+              <span class="tab-icon">🎛️</span>
+              <span>Modo DJ Táctil (Tablet)</span>
+            </button>
+            <button class="mockup-tab" data-mode="phone-wave">
+              <span class="tab-icon">📱</span>
+              <span>Ondas en Smartphone</span>
+            </button>
+            <button class="mockup-tab" data-mode="phone-dj">
+              <span class="tab-icon">🎧</span>
+              <span>Decks Cargados</span>
+            </button>
+          </div>
+
+          <div class="mockup-window">
+            <div class="mockup-bar">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="window-title" id="mockupTitle">Tablet Widescreen &bull; Modo WAVE (Pioneer XDJ-RX3)</div>
+              <div class="window-status">
+                <span class="live-pill">LIVE ENGINE</span>
+              </div>
+            </div>
+
+            <div class="mockup-viewport">
+              <img src="assets/tablet_wave_mode.png" id="showcaseImage" alt="Captura de Mixxx Android en Modo Wave" class="showcase-img" loading="eager">
+              <div class="viewport-overlay-tag" id="viewportTag">
+                <strong>Pioneer XDJ-RX3 Dashboard</strong>
+                <span>Reloj Monospace + Pitch Exacto + BPM Hero</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="section" id="features">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">INGENIERÍA PROFESIONAL DE AUDIO</span>
+          <h2 class="section-title">Diseñado Por y Para DJs</h2>
+          <p class="section-desc">
+            No es un reproductor simplificado: es el motor nativo completo de Mixxx 2.7 corriendo en Android con punto flotante de 32 bits y aceleración gráfica QML.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <div class="feature-card">
+            <div class="card-icon cyan">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h2l3-7 4 14 3-9 3 5 3-3h4"/></svg>
+            </div>
+            <h3 class="card-title">Modo WAVE Estilo Pioneer RX3</h3>
+            <p class="card-text">
+              Ondas apiladas RGB en tiempo real para beatmatching visual. Incluye display digital de tiempo conmutable (REMAIN/TIME), porcentaje de tempo exacto (&plusmn;0.00%) y salto interactivo por aguja sobre la canción entera.
+            </p>
+            <span class="card-pill">Inspiración XDJ-RX3</span>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feature-card">
+            <div class="card-icon orange">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="14" r="4"/><line x1="12" y1="6" x2="12.01" y2="6"/></svg>
+            </div>
+            <h3 class="card-title">Mesa Táctil & Faders Mejorados</h3>
+            <p class="card-text">
+              Faders de volumen y pitch optimizados para toque continuo sin tirones (preventStealing), recentrado instantáneo al 0.0% con doble toque, ecualización a 3 bandas y Quick Filters dedicados por canal.
+            </p>
+            <span class="card-pill">Multi-touch 120Hz</span>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feature-card">
+            <div class="card-icon purple">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3 class="card-title">Controladoras DJ USB Plug & Play</h3>
+            <p class="card-text">
+              Conecta tu Pioneer DDJ-400, DDJ-FLX4, Traktor Kontrol, Hercules o Numark mediante cable USB-C OTG. La app intercepta la conexión y solicita automáticamente el permiso USB de Android sin drivers.
+            </p>
+            <span class="card-pill">USB OTG Host</span>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="feature-card">
+            <div class="card-icon green">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+            </div>
+            <h3 class="card-title">Modo SPLIT Cue (Preescucha)</h3>
+            <p class="card-text">
+              ¿No tienes tarjeta de sonido externa? Activa el botón SPLIT para rutear la preescucha (Cue/PFL) por un auricular y la salida Máster por el otro. Pincha en cualquier lugar con unos cascos estándar.
+            </p>
+            <span class="card-pill">Auriculares Estándar</span>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="feature-card">
+            <div class="card-icon cyan">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </div>
+            <h3 class="card-title">Hotcues, Loops & Stems</h3>
+            <p class="card-text">
+              Pads de respuesta instantánea para disparar Hotcues, crear bucles precisos a tiempo con el beatgrid y separar stems de audio en tiempo real para aislar voces, bajos o percusión.
+            </p>
+            <span class="card-pill">Live Performance</span>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="feature-card">
+            <div class="card-icon orange">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+            <h3 class="card-title">QuickLoad Drawers & Streaming</h3>
+            <p class="card-text">
+              Carga temas al vuelo con los cajones LOAD 1 y LOAD 2 sin tapar la mesa de mezclas. Búsqueda instantánea en colecciones locales, pendrives USB y servidores de streaming Subsonic.
+            </p>
+            <span class="card-pill">Cero Interrupciones</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Steps Section -->
+    <section class="section alt-bg" id="installation">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">GUÍA PARA INSTAGRAM Y MÓVILES</span>
+          <h2 class="section-title">Instálalo en 3 Sencillos Pasos</h2>
+          <p class="section-desc">Sin registros, sin pagos, sin complicaciones. Así de fácil es tener Mixxx en tu teléfono o tablet:</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3 class="step-title">Descarga el APK</h3>
+            <p class="step-desc">
+              Toca el botón principal de descarga para bajar el archivo <code>mixxx-android-v1.0.0.apk</code> (248 MB) directamente desde GitHub Releases.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3 class="step-title">Permite la Instalación</h3>
+            <p class="step-desc">
+              Si tu navegador o Android te avisa de <em>"Instalar aplicaciones desconocidas"</em>, pulsa en Permitir. El paquete está firmado con nuestro keystore oficial.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3 class="step-title">¡Abre y a Mezclar!</h3>
+            <p class="step-desc">
+              Abre **MIXXX**, concede los permisos de audio y música, carga tus pistas favoritas o conecta tu controladora por USB y ¡disfruta de la sesión!
+            </p>
+          </div>
+        </div>
+
+        <div class="install-cta-box">
+          <div class="install-cta-content">
+            <h3>¿Listo para empezar a pinchar?</h3>
+            <p>Descarga la versión 1.0.0 compilada en nativo con soporte universal para Android 10, 11, 12, 13, 14 y 15.</p>
+          </div>
+          <a href="https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.0.0-android/mixxx-android-v1.0.0.apk" class="btn-primary btn-large">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Descargar APK Gratis</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hardware Specs Section -->
+    <section class="section" id="specs">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">ESPECIFICACIONES</span>
+          <h2 class="section-title">Requisitos de Hardware</h2>
+          <p class="section-desc">Optimizado para una latencia mínima en procesadores de 64 bits:</p>
+        </div>
+
+        <div class="specs-table-wrapper">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Componente</th>
+                <th>Requisito Mínimo</th>
+                <th>Recomendado para Sesiones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sistema Operativo</strong></td>
+                <td>Android 10.0 (API 29)</td>
+                <td>Android 13, 14 o 15 (HyperOS, OneUI, Pixel, ZUI)</td>
+              </tr>
+              <tr>
+                <td><strong>Procesador</strong></td>
+                <td>ARM64 (ARMv8-A de 64 bits)</td>
+                <td>Snapdragon 7 / 8 Gen o Dimensity 8000+</td>
+              </tr>
+              <tr>
+                <td><strong>Memoria RAM</strong></td>
+                <td>4 GB de RAM</td>
+                <td>8 GB o superior para múltiples stems</td>
+              </tr>
+              <tr>
+                <td><strong>Pantalla</strong></td>
+                <td>5.5 pulgadas (1080p)</td>
+                <td>Pantalla AMOLED 120Hz o Tablet 10"+ panorámica</td>
+              </tr>
+              <tr>
+                <td><strong>Conectividad</strong></td>
+                <td>USB-C con soporte OTG</td>
+                <td>Hub USB-C alimentado para conectar controladora + audio</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section alt-bg" id="faq">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">DUDAS HABITUALES</span>
+          <h2 class="section-title">Preguntas Frecuentes</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>¿La aplicación es 100% gratuita y sin anuncios?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Totalmente. Mixxx es un proyecto de software libre bajo licencia GNU GPL v2. Este port para Android es completamente gratuito, sin compras dentro de la app, sin suscripciones y sin ningún tipo de publicidad o rastreo.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>¿Puedo conectar mi controladora DJ por cable USB?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>¡Sí! Conecta un adaptador USB-C OTG a tu móvil o tablet y enchufa tu controladora (como Pioneer DDJ-400, DDJ-FLX4, Traktor Kontrol S2, Hercules Inpulse, etc.). La app detectará el dispositivo automáticamente y solicitará los permisos USB en pantalla.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>¿Cómo funciona el botón SPLIT para los auriculares?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>El botón SPLIT activa el ruteo Split Cue: envía la preescucha privada (Cue/PFL de la canción que estás preparando) por el canal de audio izquierdo, y la salida Máster (lo que escucha la gente) por el derecho. Con un cable divisor o unos cascos normales, puedes pinchar en directo sin llevar una tarjeta de sonido dedicada.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>¿Dónde puedo sugerir mejoras o informar de fallos?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Puedes abrir una incidencia (Issue) o aportar código directamente en nuestro <a href="https://github.com/JaviLabarumDJ/mixxx-android" target="_blank" rel="noopener noreferrer">repositorio oficial de GitHub</a>, o contactar a través de Instagram.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message">¡Enlace copiado al portapapeles!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <div class="brand">
+          <img src="assets/logo.svg" alt="Mixxx DJ Logo" width="36" height="36">
+          <div class="brand-text">
+            <span class="brand-name">MIXXX <span class="brand-accent">ANDROID</span></span>
+            <span class="brand-author">by JaviLabarumDJ</span>
+          </div>
+        </div>
+        <p class="footer-text">
+          Llevando el mejor software de DJing libre y profesional a tus dispositivos móviles.
+        </p>
+        <div class="footer-socials">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://github.com/JaviLabarumDJ/mixxx-android" target="_blank" rel="noopener noreferrer" class="social-link github" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#showcase">Modo XDJ-RX3</a></li>
+          <li><a href="#features">Características</a></li>
+          <li><a href="#installation">Cómo Instalar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Recursos & Descargas</h4>
+        <ul class="footer-links">
+          <li><a href="https://github.com/JaviLabarumDJ/mixxx-android/releases/tag/v1.0.0-android">Release Oficial v1.0.0</a></li>
+          <li><a href="https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.0.0-android/mixxx-android-v1.0.0.apk">Descarga APK Directa</a></li>
+          <li><a href="https://github.com/JaviLabarumDJ/mixxx-android#readme">Documentación Completa</a></li>
+          <li><a href="https://github.com/mixxxdj/mixxx">Proyecto Original Mixxx</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>&copy; 2026 Mixxx Android Port mantenido por <strong>JaviLabarumDJ</strong>. Licenciado bajo <strong>GNU GPL v2</strong>.</p>
+        <p class="upstream-note">Mixxx es una marca registrada de su equipo de desarrollo original. Este es un port móvil independiente sin fines de lucro.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
