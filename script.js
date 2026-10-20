@@ -1,19 +1,22 @@
 /**
- * MIXXX DJ ANDROID — SHOWCASE SCRIPTS
- * Author: JaviLabarumDJ
+ * JAVILABARUMDJ HUB — SHOWCASE SCRIPTS
+ * Author: JaviLabarumDJ (@javilabarumdj)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Audio Visualizer Canvas
   initAudioVisualizer();
 
-  // 2. Mockup Mode Switcher
-  initMockupSwitcher();
+  // 2. Mixxx Mockup Mode Switcher
+  initMixxxMockupSwitcher();
 
-  // 3. Share Button & Toast
-  initShareAction();
+  // 3. TiDownloader Mockup Switcher
+  initTidownloaderMockupSwitcher();
 
-  // 4. Navbar Scroll Effect & Mobile Drawer
+  // 4. Share & Clipboard Buttons
+  initActionButtons();
+
+  // 5. Navbar Scroll & Mobile Drawer
   initNavigation();
 });
 
@@ -50,7 +53,6 @@ function initAudioVisualizer() {
     for (let i = 0; i < bars; i++) {
       const normalizedPos = i / bars;
       
-      // Multi-harmonic synthesized audio waveforms
       const wave1 = Math.sin(normalizedPos * 10 + time * 2);
       const wave2 = Math.cos(normalizedPos * 18 - time * 1.5);
       const wave3 = Math.sin(normalizedPos * 30 + time * 3.5);
@@ -64,7 +66,6 @@ function initAudioVisualizer() {
       const x = i * (barWidth + 4);
       const y = height - barHeight - 40;
 
-      // Pioneer DJ inspired gradient: Cyan to Neon Orange
       const gradient = ctx.createLinearGradient(0, y, 0, y + barHeight);
       if (i % 2 === 0) {
         gradient.addColorStop(0, 'rgba(0, 229, 255, 0.7)');
@@ -88,9 +89,9 @@ function initAudioVisualizer() {
 }
 
 /* ==========================================================================
-   2. INTERACTIVE MOCKUP SHOWCASE
+   2. MIXXX MOCKUP SWITCHER
    ========================================================================== */
-function initMockupSwitcher() {
+function initMixxxMockupSwitcher() {
   const tabs = document.querySelectorAll('.mockup-tab');
   const showcaseImg = document.getElementById('showcaseImage');
   const mockupTitle = document.getElementById('mockupTitle');
@@ -137,11 +138,9 @@ function initMockupSwitcher() {
       const data = modeData[mode];
       if (!data) return;
 
-      // Update active tab button
       tabs.forEach((t) => t.classList.remove('active'));
       tab.classList.add('active');
 
-      // Smooth cross-fade transition
       showcaseImg.classList.add('fade-out');
 
       setTimeout(() => {
@@ -152,53 +151,91 @@ function initMockupSwitcher() {
           viewportTag.innerHTML = `<strong>${data.tagTitle}</strong><span>${data.tagSubtitle}</span>`;
         }
         showcaseImg.classList.remove('fade-out');
-      }, 200);
+      }, 180);
     });
   });
 }
 
 /* ==========================================================================
-   3. SHARE ACTION & TOAST NOTIFICATION
+   3. TIDOWNLOADER MOCKUP SWITCHER
    ========================================================================== */
-function initShareAction() {
+function initTidownloaderMockupSwitcher() {
+  const tabs = document.querySelectorAll('.mockup-tab-tid');
+  const showcaseImg = document.getElementById('tidShowcaseImage');
+  const mockupTitle = document.getElementById('tidMockupTitle');
+
+  if (!tabs.length || !showcaseImg) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      if (tab.classList.contains('active')) return;
+
+      const img = tab.getAttribute('data-img');
+      const title = tab.getAttribute('data-title');
+      if (!img) return;
+
+      tabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      showcaseImg.classList.add('fade-out');
+
+      setTimeout(() => {
+        showcaseImg.src = img;
+        if (mockupTitle) mockupTitle.textContent = `TiDownloader Web • ${title}`;
+        showcaseImg.classList.remove('fade-out');
+      }, 180);
+    });
+  });
+}
+
+/* ==========================================================================
+   4. ACTION BUTTONS & TOAST
+   ========================================================================== */
+function initActionButtons() {
   const shareBtn = document.getElementById('shareBtn');
+  const copyDockerBtn = document.getElementById('copyDockerBtn');
   const toast = document.getElementById('toast');
   const shareUrl = 'https://javilabarumdj.github.io/';
 
-  if (!shareBtn || !toast) return;
-
-  shareBtn.addEventListener('click', async () => {
-    // Try native Web Share API first (Mobile Instagram/Chrome/Safari)
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'Mixxx DJ para Android 🎧',
-          text: 'Descarga gratis Mixxx DJ para Android por JaviLabarumDJ. Modo Pioneer XDJ-RX3 y controladoras USB.',
-          url: shareUrl
-        });
-        return;
-      } catch (err) {
-        // Fallback to clipboard if share was dismissed or unsupported
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'JaviLabarumDJ Hub 🎧',
+            text: 'Descarga Mixxx DJ para Android (Modo Pioneer RX3) y TiDownloader por @javilabarumdj.',
+            url: shareUrl
+          });
+          return;
+        } catch (err) {}
       }
-    }
 
-    // Clipboard copy fallback
-    try {
-      await navigator.clipboard.writeText(shareUrl);
-      showToast('¡Enlace copiado al portapapeles!');
-    } catch (err) {
-      // Legacy fallback
-      const tempInput = document.createElement('input');
-      tempInput.value = shareUrl;
-      document.body.appendChild(tempInput);
-      tempInput.select();
+      copyToClipboard(shareUrl, '¡Enlace del Hub copiado al portapapeles!');
+    });
+  }
+
+  if (copyDockerBtn) {
+    copyDockerBtn.addEventListener('click', () => {
+      copyToClipboard('docker compose up -d', '¡Comando "docker compose up -d" copiado!');
+    });
+  }
+
+  function copyToClipboard(text, msg) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => showToast(msg));
+    } else {
+      const temp = document.createElement('input');
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
       document.execCommand('copy');
-      document.body.removeChild(tempInput);
-      showToast('¡Enlace copiado al portapapeles!');
+      document.body.removeChild(temp);
+      showToast(msg);
     }
-  });
+  }
 
   function showToast(msg) {
+    if (!toast) return;
     const msgEl = toast.querySelector('.toast-message');
     if (msgEl) msgEl.textContent = msg;
 
@@ -210,14 +247,13 @@ function initShareAction() {
 }
 
 /* ==========================================================================
-   4. NAVIGATION & MOBILE MENU
+   5. NAVIGATION
    ========================================================================== */
 function initNavigation() {
   const navbar = document.getElementById('navbar');
   const mobileToggle = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
 
-  // Sticky header shadow on scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
       navbar.classList.add('scrolled');
@@ -226,7 +262,6 @@ function initNavigation() {
     }
   });
 
-  // Mobile menu toggle
   if (mobileToggle && navLinks) {
     mobileToggle.addEventListener('click', () => {
       const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
@@ -248,7 +283,6 @@ function initNavigation() {
       }
     });
 
-    // Close menu when a link is clicked
     navLinks.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
