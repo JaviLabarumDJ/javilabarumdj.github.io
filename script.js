@@ -102,9 +102,9 @@ function initMixxxMockupSwitcher() {
   const modeData = {
     'tablet-wave': {
       src: 'assets/tablet_wave_mode.png',
-      alt: 'Mixxx Android en tablet modo WAVE estilo Pioneer RX3',
-      title: 'Tablet Widescreen • Modo WAVE (Pioneer XDJ-RX3)',
-      tagTitle: 'Pioneer XDJ-RX3 Dashboard',
+      alt: 'Mixxx Android en tablet modo WAVE de cabina profesional',
+      title: 'Tablet Widescreen • Modo WAVE (Cabina Pro)',
+      tagTitle: 'WAVE Dashboard de Cabina',
       tagSubtitle: 'Reloj Monospace + Pitch Exacto + BPM Hero'
     },
     'tablet-dj': {
@@ -115,9 +115,9 @@ function initMixxxMockupSwitcher() {
       tagSubtitle: 'EQ 3-Bandas + Filtros + Faders con Recentrado'
     },
     'phone-wave': {
-      src: 'assets/phone_wave_rx3.png',
+      src: 'assets/phone_wave_mode.png',
       alt: 'Mixxx Android en móvil modo WAVE apilado',
-      title: 'Smartphone • Modo WAVE RX3 en Acción',
+      title: 'Smartphone • Modo WAVE de Cabina en Acción',
       tagTitle: 'Ondas RGB Dinámicas',
       tagSubtitle: 'Seguimiento de fase visual y salto por aguja'
     },
@@ -203,7 +203,7 @@ function initActionButtons() {
         try {
           await navigator.share({
             title: 'JaviLabarumDJ Hub 🎧',
-            text: 'Descarga Mixxx DJ para Android (Modo Pioneer RX3) y TiDownloader por @javilabarumdj.',
+            text: 'Descarga Mixxx DJ para Android (Modo WAVE de Cabina) y TiDownloader por @javilabarumdj.',
             url: shareUrl
           });
           return;
