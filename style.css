@@ -1565,3 +1565,155 @@ body {
   font-size: 3.2rem;
   margin-bottom: 1rem;
 }
+
+
+/* ==========================================================================
+   HARDWARE SPECS TABLE & CALLOUT
+   ========================================================================== */
+.specs-table-wrapper {
+  background: rgba(16, 20, 28, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  overflow-x: auto;
+  margin: 2rem 0 1.5rem;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: var(--font-body);
+  min-width: 650px;
+}
+
+.specs-table thead th {
+  padding: 1.4rem 1.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.specs-table thead th:last-child {
+  color: var(--cyan);
+}
+
+.specs-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+.specs-badge.cyan {
+  background: rgba(0, 229, 255, 0.15);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+.specs-badge.gray {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.specs-table tbody tr {
+  transition: background 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.specs-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.specs-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.specs-table tbody td {
+  padding: 1.25rem 1.75rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.specs-table tbody td:first-child {
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.specs-table tbody td:first-child span.spec-icon {
+  display: inline-block;
+  margin-right: 0.6rem;
+  font-size: 1.15rem;
+  vertical-align: -2px;
+}
+
+.specs-table tbody td:last-child {
+  background: rgba(0, 229, 255, 0.015);
+  color: #f1f5f9;
+}
+
+.specs-table tbody td .spec-detail {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.specs-callout {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.25rem 1.75rem;
+  background: rgba(0, 229, 255, 0.04);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 16px;
+  margin-top: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.specs-callout-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.specs-callout-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.specs-callout-text strong {
+  color: #fff;
+}
+
+.specs-callout-text em {
+  color: var(--cyan);
+  font-style: normal;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .specs-callout {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
+}
