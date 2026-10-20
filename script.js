@@ -263,33 +263,51 @@ function initNavigation() {
   });
 
   if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-      mobileToggle.setAttribute('aria-expanded', !isExpanded);
-      
-      if (!isExpanded) {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '72px';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = '#0a0d14';
-        navLinks.style.padding = '1.5rem';
-        navLinks.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
-        navLinks.style.gap = '1.25rem';
+    function toggleMobileMenu(forceState) {
+      const isCurrentlyOpen = navLinks.classList.contains('mobile-open');
+      const shouldOpen = forceState !== undefined ? forceState : !isCurrentlyOpen;
+
+      if (shouldOpen) {
+        navLinks.classList.add('mobile-open');
+        mobileToggle.classList.add('is-active');
+        mobileToggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('menu-locked');
       } else {
-        navLinks.style.display = '';
+        navLinks.classList.remove('mobile-open');
+        mobileToggle.classList.remove('is-active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-locked');
       }
+    }
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileMenu();
     });
 
+    // Close when clicking any menu link
     navLinks.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
-          navLinks.style.display = '';
-          mobileToggle.setAttribute('aria-expanded', 'false');
+          toggleMobileMenu(false);
         }
       });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('mobile-open')) {
+        if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+          toggleMobileMenu(false);
+        }
+      }
+    });
+
+    // Close on window resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && navLinks.classList.contains('mobile-open')) {
+        toggleMobileMenu(false);
+      }
     });
   }
 }
