@@ -293,3 +293,57 @@ function initNavigation() {
     });
   }
 }
+
+// Dropdown menu click & touch handler
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownBtn = document.getElementById('appsDropdownBtn');
+  const dropdownMenu = document.getElementById('appsDropdownMenu');
+
+  if (dropdownBtn && dropdownMenu) {
+    dropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdownMenu.classList.contains('show');
+      dropdownMenu.classList.toggle('show');
+      dropdownBtn.setAttribute('aria-expanded', !isOpen);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.remove('show');
+        dropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+});
+
+/* ==========================================================================
+   6. CATALOG FILTER PILLS
+   ========================================================================== */
+function initCatalogFilter() {
+  const pillsContainer = document.getElementById('appsFilterPills');
+  if (!pillsContainer) return;
+
+  const buttons = pillsContainer.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#appsGrid article');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category') || '';
+        if (filter === 'all' || cat.includes(filter)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCatalogFilter();
+});

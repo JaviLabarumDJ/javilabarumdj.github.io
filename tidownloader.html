@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>TiDownloader 🎵 | Música en FLAC Lossless por JaviLabarumDJ</title>
+  <meta name="description" content="TiDownloader: Descargador de música autoalojado de alta fidelidad para tu suscripción de Tidal. FLAC Lossless, MP3 320, sincronización a carpeta local y Docker. Creado por JaviLabarumDJ.">
+  <meta name="keywords" content="TiDownloader, Tidal FLAC downloader, JaviLabarumDJ, descargar música FLAC, música DJ alta calidad, Tidal MP3 320, @javilabarumdj">
+  <meta name="theme-color" content="#08090d">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://javilabarumdj.github.io/tidownloader/">
+  <meta property="og:title" content="TiDownloader 🎵 | Tu música DJ en FLAC Lossless de alta fidelidad">
+  <meta property="og:description" content="Descarga tus pistas y álbumes en FLAC Lossless y MP3 320 kbps con sincronización automática a tu ordenador. ¡Código abierto por JaviLabarumDJ!">
+  <meta property="og:image" content="../assets/tidownloader/search.png">
+  
+  <link rel="icon" type="image/svg+xml" href="../assets/tidownloader/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="ambient-glow cyan" aria-hidden="true"></div>
+  <div class="ambient-glow orange" aria-hidden="true"></div>
+  <canvas id="audioVisualizer" aria-hidden="true"></canvas>
+
+  <!-- Sticky Glass Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="brand" aria-label="JaviLabarumDJ Inicio">
+        <img src="../assets/tidownloader/logo.svg" alt="TiDownloader Logo" class="brand-logo" width="38" height="38">
+        <div class="brand-text">
+          <span class="brand-name">TI<span class="brand-accent" style="color:var(--teal)">DOWNLOADER</span></span>
+          <span class="brand-author">by JaviLabarumDJ</span>
+        </div>
+      </a>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html">← Inicio</a>
+        <a href="../index.html#apps">← Todas las Apps</a>
+        <a href="#features">Características</a>
+        <a href="#showcase">Capturas</a>
+        <a href="#deploy">Docker & Despliegue</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/JaviLabarumDJ/tidownloader" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="Ver en GitHub" title="Ver código en GitHub">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://github.com/JaviLabarumDJ/tidownloader" target="_blank" rel="noopener noreferrer" class="btn-primary btn-teal nav-download-btn">
+          <span>Ver en GitHub</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-container">
+        <div class="creator-badge" style="border-color:rgba(0, 212, 197, 0.3); color:var(--teal); background:rgba(0, 212, 197, 0.08)">
+          <span class="pulse-dot teal"></span>
+          <span>MÚSICA LOSSLESS DE ESTUDIO &bull; SELF-HOSTED</span>
+        </div>
+        
+        <h1 class="hero-title">
+          TiDownloader<br>
+          <span class="gradient-text" style="background: linear-gradient(135deg, var(--teal) 15%, #00e5ff 50%, var(--orange) 90%); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Tu Música en FLAC Sin Pérdida</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Descargador autoalojado para tu suscripción de Tidal creado por <strong>JaviLabarumDJ</strong>. Descarga pistas, álbumes y playlists completas en <strong>FLAC Lossless de alta fidelidad</strong> o <strong>MP3 a 320 kbps</strong> directamente a tu ordenador para cargarlas en Mixxx DJ.
+        </p>
+
+        <!-- CTA Group -->
+        <div class="hero-cta-group">
+          <a href="https://github.com/JaviLabarumDJ/tidownloader" target="_blank" rel="noopener noreferrer" class="btn-hero-download tid-btn">
+            <div class="btn-icon-wrapper teal">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <div class="btn-text-content">
+              <span class="btn-title">VER PROYECTO EN GITHUB</span>
+              <span class="btn-meta">JaviLabarumDJ/tidownloader &bull; 100% Código Abierto MIT</span>
+            </div>
+          </a>
+
+          <div class="secondary-actions">
+            <button class="btn-secondary" id="copyDockerBtn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span>Copiar Docker Run</span>
+            </button>
+            <a href="#deploy" class="btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span>Guía Rápida</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Showcase Window -->
+        <div class="mockup-section" id="showcase">
+          <div class="mockup-controls">
+            <button class="mockup-tab-tid active" data-img="../assets/tidownloader/search.png" data-title="Búsqueda Inteligente de Tracks, Álbumes y Artistas">
+              <span class="tab-icon">🔍</span>
+              <span>Buscador Integrado</span>
+            </button>
+            <button class="mockup-tab-tid" data-img="../assets/tidownloader/queue-with-jobs.png" data-title="Gestión de Cola de Descargas con Progreso en Vivo">
+              <span class="tab-icon">⚡</span>
+              <span>Cola y Progreso</span>
+            </button>
+            <button class="mockup-tab-tid" data-img="../assets/tidownloader/library.png" data-title="Explorador y Gestor de Archivos Descargados">
+              <span class="tab-icon">📁</span>
+              <span>Gestor de Archivos</span>
+            </button>
+            <button class="mockup-tab-tid" data-img="../assets/tidownloader/settings-with-folder.png" data-title="Configuración de Formatos y Sincronización Local">
+              <span class="tab-icon">⚙️</span>
+              <span>Sincronización Local</span>
+            </button>
+          </div>
+
+          <div class="mockup-window">
+            <div class="mockup-bar">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="window-title" id="tidMockupTitle">TiDownloader Web &bull; Búsqueda Inteligente de Tracks, Álbumes y Artistas</div>
+              <div class="window-status">
+                <span class="live-pill teal">FLAC HI-RES READY</span>
+              </div>
+            </div>
+
+            <div class="mockup-viewport">
+              <img src="../assets/tidownloader/search.png" id="tidShowcaseImage" alt="TiDownloader Interfaz Web" class="showcase-img" loading="eager">
+              <div class="viewport-overlay-tag" id="tidViewportTag" style="border-color: rgba(0, 212, 197, 0.4);">
+                <strong style="color:var(--teal)">Descarga en Máxima Calidad</strong>
+                <span>FLAC Lossless &bull; MP3 320kbps &bull; M4A AAC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="section alt-bg" id="features">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">CARACTERÍSTICAS TÉCNICAS</span>
+          <h2 class="section-title">Tu Colección de Música Impecable</h2>
+          <p class="section-desc">
+            Diseñado para DJs y audiófilos que necesitan que cada tema suene perfecto en sistemas de sonido profesionales.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="card-icon teal">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="card-title">Calidad FLAC de Estudio</h3>
+            <p class="card-text">
+              Descarga directa en FLAC Lossless sin compresión, M4A AAC a 320 kbps o MP3 clásico de 320 kbps. Selección inteligente que pasa automáticamente a Lossless si el tema no tiene Hi-Res.
+            </p>
+            <span class="card-pill">FLAC / MP3 / M4A</span>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon orange">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="card-title">Sincronización a Carpeta Local</h3>
+            <p class="card-text">
+              Elige cualquier carpeta de tu disco duro con el selector nativo del navegador (File System Access API). Los temas descargados van directamente a tu carpeta de música de Mixxx.
+            </p>
+            <span class="card-pill">File System API</span>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon purple">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3 class="card-title">Docker Compose Listo</h3>
+            <p class="card-text">
+              Despliegue instantáneo en Linux, Mac o Windows con Docker Compose. Mantiene la cola de descargas persistente en SQLite ante reinicios del contenedor.
+            </p>
+            <span class="card-pill">Docker & SQLite</span>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon green">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="card-title">Autenticación OAuth Segura</h3>
+            <p class="card-text">
+              No guarda contraseñas. Se autentica de forma segura vinculando el dispositivo con tu cuenta de Tidal mediante el código oficial de vinculación.
+            </p>
+            <span class="card-pill">OAuth Device Link</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="section" id="deploy">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">DESPLIEGUE RÁPIDO</span>
+          <h2 class="section-title">Cómo Iniciar TiDownloader en 2 Minutos</h2>
+          <p class="section-desc">Elige el método que mejor se adapte a tu entorno:</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number" style="background: linear-gradient(180deg, var(--teal) 0%, transparent 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">01</div>
+            <h3 class="step-title">Clona el Repositorio</h3>
+            <p class="step-desc">
+              <code>git clone https://github.com/JaviLabarumDJ/tidownloader.git</code><br>
+              <code>cd tidownloader</code>
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number" style="background: linear-gradient(180deg, var(--teal) 0%, transparent 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">02</div>
+            <h3 class="step-title">Inicia con Docker</h3>
+            <p class="step-desc">
+              Ejecuta el contenedor en segundo plano:<br>
+              <code>docker compose up -d</code>
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number" style="background: linear-gradient(180deg, var(--teal) 0%, transparent 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">03</div>
+            <h3 class="step-title">Abre el Navegador</h3>
+            <p class="step-desc">
+              Entra en <code>http://localhost:8000</code>, vincula tu cuenta y empieza a descargar tus pistas en máxima calidad.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section alt-bg" id="faq">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">DUDAS FRECUENTES</span>
+          <h2 class="section-title">Preguntas Frecuentes</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>¿Necesito una suscripción de Tidal?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Sí, TiDownloader utiliza la API oficial de Tidal y requiere que vincules tu cuenta activa de Tidal para descargar los archivos que tu suscripción permite.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>¿Puedo pasar los temas descargados a mi móvil para Mixxx?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>¡Claro! Los archivos descargados quedan almacenados en la carpeta que elijas en tu ordenador o NAS. Puedes copiarlos a la memoria de tu móvil o a un pendrive USB OTG y cargarlos directamente en Mixxx DJ para Android.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message">¡Comando copiado al portapapeles!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <div class="brand">
+          <img src="../assets/tidownloader/logo.svg" alt="TiDownloader Logo" width="38" height="38">
+          <div class="brand-text">
+            <span class="brand-name">TI<span class="brand-accent" style="color:var(--teal)">DOWNLOADER</span></span>
+            <span class="brand-author">by JaviLabarumDJ</span>
+          </div>
+        </div>
+        <p class="footer-text">
+          Herramienta de música autoalojada mantenida por <strong>JaviLabarumDJ</strong> (@javilabarumdj).
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html">← Hub Principal</a></li>
+          <li><a href="../mixxx/">Mixxx DJ para Android</a></li>
+          <li><a href="#features">Características</a></li>
+          <li><a href="#deploy">Guía de Despliegue</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Redes de JaviLabarumDJ</h4>
+        <ul class="footer-links">
+          <li><a href="https://instagram.com/javilabarumdj" target="_blank" rel="noopener noreferrer">Instagram (@javilabarumdj)</a></li>
+          <li><a href="https://tiktok.com/@javilabarumdj" target="_blank" rel="noopener noreferrer">TikTok (@javilabarumdj)</a></li>
+          <li><a href="https://youtube.com/@javilabarumdj" target="_blank" rel="noopener noreferrer">YouTube (@javilabarumdj)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>&copy; 2026 TiDownloader mantenido por <strong>JaviLabarumDJ</strong>. Licenciado bajo <strong>MIT</strong>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

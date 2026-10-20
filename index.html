@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>JaviLabarumDJ Hub 🎧 | Mixxx Android & TiDownloader</title>
-  <meta name="description" content="El portal oficial de software y herramientas DJ de JaviLabarumDJ (@javilabarumdj). Descarga Mixxx DJ para Android (Modo Pioneer RX3) y TiDownloader (Música en FLAC/MP3 sin pérdidas).">
-  <meta name="keywords" content="JaviLabarumDJ, Mixxx Android, TiDownloader, DJ Android, Pioneer RX3, Tidal FLAC downloader, APK Mixxx, @javilabarumdj">
+  <title>JaviLabarumDJ 🎧 | Hub Oficial de Aplicaciones DJ & Herramientas</title>
+  <meta name="description" content="Portal oficial de JaviLabarumDJ (@javilabarumdj). Descubre y descarga nuestras aplicaciones: Mixxx DJ para Android (Modo Pioneer RX3) y TiDownloader (FLAC sin pérdidas).">
+  <meta name="keywords" content="JaviLabarumDJ, Mixxx Android, TiDownloader, DJ Android, Pioneer RX3, Tidal FLAC, @javilabarumdj">
   <meta name="theme-color" content="#08090d">
   
-  <!-- Open Graph / Instagram / TikTok / WhatsApp preview -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://javilabarumdj.github.io/">
-  <meta property="og:title" content="JaviLabarumDJ Hub 🎧 | Apps DJ & Herramientas de Música">
-  <meta property="og:description" content="Descarga Mixxx DJ para Android con modo Pioneer RX3 y TiDownloader para música en FLAC. Sígueme en @javilabarumdj!">
+  <meta property="og:title" content="JaviLabarumDJ 🎧 | Apps DJ & Herramientas Musicales">
+  <meta property="og:description" content="Descarga Mixxx DJ Android y TiDownloader. Sígueme en Instagram, TikTok y YouTube: @javilabarumdj!">
   <meta property="og:image" content="assets/tablet_wave_mode.png">
   
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
@@ -22,33 +21,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Ambient glow background -->
   <div class="ambient-glow cyan" aria-hidden="true"></div>
   <div class="ambient-glow orange" aria-hidden="true"></div>
-  
-  <!-- Audio spectrum canvas header background -->
   <canvas id="audioVisualizer" aria-hidden="true"></canvas>
 
-  <!-- Sticky Glass Navbar -->
+  <!-- Sticky Navbar with Apps Dropdown -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#" class="brand" aria-label="JaviLabarumDJ Inicio">
+      <a href="index.html" class="brand" aria-label="JaviLabarumDJ Inicio">
         <img src="assets/logo.svg" alt="JaviLabarumDJ Logo" class="brand-logo" width="38" height="38">
         <div class="brand-text">
           <span class="brand-name">JAVILABARUM<span class="brand-accent">DJ</span></span>
-          <span class="brand-author">Apps & DJ Tools Hub</span>
+          <span class="brand-author">Apps & Music Hub</span>
         </div>
       </a>
       
       <nav class="nav-links" id="navLinks">
-        <a href="#mixxx" class="nav-pill-mixxx">🎧 Mixxx Android</a>
-        <a href="#tidownloader" class="nav-pill-tid">🎵 TiDownloader</a>
-        <a href="#social" class="nav-pill-social">📱 Redes Sociales</a>
-        <a href="#faq">Preguntas</a>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="#apps">Aplicaciones</a>
+        <a href="#social">Redes Sociales</a>
+        <a href="#about">Sobre Mí</a>
       </nav>
 
       <div class="nav-actions">
-        <!-- Social quick links -->
         <a href="https://instagram.com/javilabarumdj" target="_blank" rel="noopener noreferrer" class="btn-icon instagram" aria-label="Instagram @javilabarumdj" title="Instagram @javilabarumdj">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
@@ -58,9 +53,7 @@
         <a href="https://youtube.com/@javilabarumdj" target="_blank" rel="noopener noreferrer" class="btn-icon youtube" aria-label="YouTube @javilabarumdj" title="YouTube @javilabarumdj">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </a>
-        <a href="#mixxx-download" class="btn-primary nav-download-btn">
-          <span>Descargar Mixxx APK</span>
-        </a>
+        <a href="#apps" class="btn-primary nav-download-btn"><span>Ver Aplicaciones</span></a>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -69,27 +62,26 @@
   </header>
 
   <main>
-    <!-- Master Hero: Hub Overview -->
+    <!-- Master Hero -->
     <section class="hero" id="hero">
       <div class="hero-container">
-        <!-- DJ Profile Pill -->
         <div class="creator-badge">
           <img src="assets/logo.svg" alt="JaviLabarumDJ" class="creator-avatar" width="28" height="28">
-          <span>CREADO POR <strong>@JAVILABARUMDJ</strong> &bull; DJ & TECH INNOVATOR</span>
+          <span>CREADO POR <strong>@JAVILABARUMDJ</strong> &bull; DJ & DEVELOPER</span>
         </div>
         
         <h1 class="hero-title">
-          Herramientas DJ Profesionales<br>
-          <span class="gradient-text">Para Tu Móvil, Tablet y Cabina</span>
+          Software & Herramientas DJ<br>
+          <span class="gradient-text">Creadas Para La Cabina Moderna</span>
         </h1>
         
         <p class="hero-subtitle">
-          Bienvenido al hub oficial de <strong>JaviLabarumDJ</strong>. Aquí puedes descargar la versión completa de <strong>Mixxx DJ para Android</strong> con el modo de pantalla <strong>Pioneer XDJ-RX3</strong> y utilizar <strong>TiDownloader</strong> para conseguir tu música en máxima fidelidad FLAC sin pérdidas.
+          Bienvenido al centro oficial de desarrollo de <strong>JaviLabarumDJ</strong>. Descubre nuestras aplicaciones especializadas para pinchar en cualquier lugar y conseguir tu música con la máxima calidad de audio.
         </p>
 
-        <!-- Social Channels Showcase Bar -->
+        <!-- Social Channels Bar -->
         <div class="social-channels-bar" id="social">
-          <span class="social-label">Sígueme en redes:</span>
+          <span class="social-label">Conéctate conmigo:</span>
           <div class="social-chips">
             <a href="https://instagram.com/javilabarumdj" target="_blank" rel="noopener noreferrer" class="social-chip instagram">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -105,354 +97,113 @@
             </a>
           </div>
         </div>
-
-        <!-- App Switcher Cards Banner -->
-        <div class="hub-app-cards">
-          <a href="#mixxx" class="app-card-pill active">
-            <div class="app-card-icon cyan">🎧</div>
-            <div class="app-card-info">
-              <span class="app-card-title">Mixxx DJ para Android</span>
-              <span class="app-card-tag">APK v1.0.0 &bull; Modo Pioneer RX3</span>
-            </div>
-            <span class="app-card-arrow">↓</span>
-          </a>
-
-          <a href="#tidownloader" class="app-card-pill">
-            <div class="app-card-icon teal">🎵</div>
-            <div class="app-card-info">
-              <span class="app-card-title">TiDownloader</span>
-              <span class="app-card-tag">FLAC Lossless & MP3 320 &bull; Web UI</span>
-            </div>
-            <span class="app-card-arrow">↓</span>
-          </a>
-        </div>
       </div>
     </section>
 
-    <!-- SECTION 1: MIXXX DJ ANDROID -->
-    <section class="section app-section" id="mixxx">
+    <!-- APPS CATALOG SECTION -->
+    <section class="section alt-bg" id="apps">
       <div class="section-container">
         <div class="section-header">
-          <div class="badge-mixxx">
-            <span class="pulse-dot"></span>
-            <span>APLICACIÓN #1 &bull; RELEASE v1.0.0 UNIVERSAL</span>
-          </div>
-          <h2 class="section-title">Mixxx DJ para Android</h2>
+          <span class="section-kicker">CATÁLOGO DE PROYECTOS</span>
+          <h2 class="section-title">Elige Tu Aplicación</h2>
           <p class="section-desc">
-            Todo el poder del software líder de DJing open-source con punto flotante de 32 bits, adaptado para pantallas táctiles y controladoras USB.
+            Cada aplicación cuenta con su propia página dedicada, descargas oficiales, guías paso a paso y código fuente abierto.
           </p>
         </div>
 
-        <!-- Download Hero Action for Mixxx -->
-        <div class="hero-cta-group" id="mixxx-download">
-          <a href="https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.0.0-android/mixxx-android-v1.0.0.apk" class="btn-hero-download" id="apkDownloadBtn">
-            <div class="btn-icon-wrapper">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </div>
-            <div class="btn-text-content">
-              <span class="btn-title">DESCARGAR APK OFICIAL</span>
-              <span class="btn-meta">v1.0.0 &bull; ARM64 &bull; 248 MB &bull; Android 10 a 15+ &bull; Gratis</span>
-            </div>
-          </a>
-
-          <div class="secondary-actions">
-            <button class="btn-secondary" id="shareBtn">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              <span>Compartir en Instagram</span>
-            </button>
-            <a href="https://github.com/JaviLabarumDJ/mixxx-android" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>Repositorio en GitHub</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Interactive Mockup Showcase for Mixxx -->
-        <div class="mockup-section" id="showcase">
-          <div class="mockup-controls">
-            <button class="mockup-tab active" data-mode="tablet-wave">
-              <span class="tab-icon">🌊</span>
-              <span>Modo WAVE (XDJ-RX3)</span>
-            </button>
-            <button class="mockup-tab" data-mode="tablet-dj">
-              <span class="tab-icon">🎛️</span>
-              <span>Modo DJ Táctil (Tablet)</span>
-            </button>
-            <button class="mockup-tab" data-mode="phone-wave">
-              <span class="tab-icon">📱</span>
-              <span>Ondas en Smartphone</span>
-            </button>
-            <button class="mockup-tab" data-mode="phone-dj">
-              <span class="tab-icon">🎧</span>
-              <span>Decks Cargados</span>
-            </button>
-          </div>
-
-          <div class="mockup-window">
-            <div class="mockup-bar">
-              <div class="window-dots">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-              </div>
-              <div class="window-title" id="mockupTitle">Tablet Widescreen &bull; Modo WAVE (Pioneer XDJ-RX3)</div>
-              <div class="window-status">
-                <span class="live-pill">LIVE ENGINE</span>
+        <div class="apps-showcase-grid">
+          <!-- App 1: Mixxx DJ Android -->
+          <article class="app-spotlight-card mixxx-card">
+            <div class="app-card-media">
+              <img src="assets/tablet_wave_mode.png" alt="Mixxx DJ Android en Tablet" loading="lazy">
+              <div class="media-overlay-badge cyan">
+                <span>RELEASE v1.0.0</span>
               </div>
             </div>
-
-            <div class="mockup-viewport">
-              <img src="assets/tablet_wave_mode.png" id="showcaseImage" alt="Captura de Mixxx Android en Modo Wave" class="showcase-img" loading="eager">
-              <div class="viewport-overlay-tag" id="viewportTag">
-                <strong>Pioneer XDJ-RX3 Dashboard</strong>
-                <span>Reloj Monospace + Pitch Exacto + BPM Hero</span>
+            <div class="app-card-body">
+              <div class="app-tags">
+                <span class="tag cyan">Android 10 - 15</span>
+                <span class="tag">Pioneer RX3</span>
+                <span class="tag">USB MIDI OTG</span>
+                <span class="tag">Split Cue</span>
+              </div>
+              <h3 class="app-heading">Mixxx DJ para Android</h3>
+              <p class="app-summary">
+                La cabina DJ profesional de código abierto más potente del mundo, portada a Android. Mezcla en pantallas táctiles con faders optimizados, ondas apiladas estilo Pioneer XDJ-RX3 y soporte para controladoras USB plug-and-play.
+              </p>
+              <div class="app-card-footer">
+                <a href="mixxx/" class="btn-primary">
+                  <span>Ver Página Completa &rarr;</span>
+                </a>
+                <a href="https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.0.0-android/mixxx-android-v1.0.0.apk" class="btn-secondary">
+                  <span>Descargar APK (248 MB)</span>
+                </a>
               </div>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- Features Grid -->
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="card-icon cyan">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h2l3-7 4 14 3-9 3 5 3-3h4"/></svg>
+          <!-- App 2: TiDownloader -->
+          <article class="app-spotlight-card tid-card">
+            <div class="app-card-media">
+              <img src="assets/tidownloader/search.png" alt="TiDownloader Interfaz Web" loading="lazy">
+              <div class="media-overlay-badge teal">
+                <span>FLAC HI-RES LOSSLESS</span>
+              </div>
             </div>
-            <h3 class="card-title">Modo WAVE Estilo Pioneer RX3</h3>
-            <p class="card-text">
-              Ondas apiladas RGB en tiempo real para beatmatching visual con reloj digital (REMAIN/TIME), porcentaje de tempo exacto (&plusmn;0.00%) y salto táctil por aguja.
-            </p>
-            <span class="card-pill">Inspiración XDJ-RX3</span>
-          </div>
-
-          <div class="feature-card">
-            <div class="card-icon orange">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="14" r="4"/><line x1="12" y1="6" x2="12.01" y2="6"/></svg>
+            <div class="app-card-body">
+              <div class="app-tags">
+                <span class="tag teal">FLAC sin pérdidas</span>
+                <span class="tag">MP3 320k</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Sincronización Local</span>
+              </div>
+              <h3 class="app-heading">TiDownloader</h3>
+              <p class="app-summary">
+                Descargador de música autoalojado de alta fidelidad para tu suscripción de Tidal. Busca temas, álbumes o playlists y descarga en FLAC Lossless o MP3 a 320 kbps directamente a la carpeta de tu ordenador para pinchar en Mixxx.
+              </p>
+              <div class="app-card-footer">
+                <a href="tidownloader/" class="btn-primary btn-teal">
+                  <span>Ver Página Completa &rarr;</span>
+                </a>
+                <a href="https://github.com/JaviLabarumDJ/tidownloader" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                  <span>Ver en GitHub</span>
+                </a>
+              </div>
             </div>
-            <h3 class="card-title">Mesa Táctil & Faders Mejorados</h3>
-            <p class="card-text">
-              Faders de volumen y pitch optimizados para toque continuo sin tirones (preventStealing), recentrado instantáneo al 0.0% con doble toque, ecualización a 3 bandas y Quick Filters dedicados.
-            </p>
-            <span class="card-pill">Multi-touch 120Hz</span>
-          </div>
-
-          <div class="feature-card">
-            <div class="card-icon purple">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            </div>
-            <h3 class="card-title">Controladoras DJ USB Plug & Play</h3>
-            <p class="card-text">
-              Conecta tu Pioneer DDJ-400, DDJ-FLX4, Traktor Kontrol, Hercules o Numark mediante cable USB-C OTG con detección automática y sin controladores adicionales.
-            </p>
-            <span class="card-pill">USB OTG Host</span>
-          </div>
-
-          <div class="feature-card">
-            <div class="card-icon green">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
-            </div>
-            <h3 class="card-title">Modo SPLIT Cue (Preescucha)</h3>
-            <p class="card-text">
-              ¿No tienes tarjeta de sonido externa? Activa SPLIT para enviar la preescucha privada por un auricular y el Máster por el otro. Pincha con unos cascos estándar.
-            </p>
-            <span class="card-pill">Auriculares Estándar</span>
-          </div>
-        </div>
-
-        <!-- 3-step Quick Install Guide -->
-        <div class="install-section">
-          <div class="section-header">
-            <span class="section-kicker">INSTALACIÓN ULTRA RÁPIDA</span>
-            <h3 class="section-title">Instálalo en tu Móvil o Tablet en 3 Pasos</h3>
-          </div>
-          <div class="steps-grid">
-            <div class="step-card">
-              <div class="step-number">01</div>
-              <h4 class="step-title">Descarga el APK</h4>
-              <p class="step-desc">Toca en Descargar APK Oficial (248 MB) para obtener el instalador directo firmado.</p>
-            </div>
-            <div class="step-card">
-              <div class="step-number">02</div>
-              <h4 class="step-title">Permite la Instalación</h4>
-              <p class="step-desc">Si Android te solicita permiso para "Instalar apps desconocidas", dale a Permitir.</p>
-            </div>
-            <div class="step-card">
-              <div class="step-number">03</div>
-              <h4 class="step-title">¡Abre y a Mezclar!</h4>
-              <p class="step-desc">Inicia MIXXX, acepta los permisos de audio y almacenamiento, ¡y empieza tu sesión!</p>
-            </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: TIDOWNLOADER -->
-    <section class="section app-section alt-bg" id="tidownloader">
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
       <div class="section-container">
-        <div class="section-header">
-          <div class="badge-tid">
-            <span class="pulse-dot teal"></span>
-            <span>APLICACIÓN #2 &bull; MÚSICA HI-RES PARA DJS</span>
+        <div class="about-box">
+          <div class="about-avatar-wrapper">
+            <img src="assets/logo.svg" alt="JaviLabarumDJ" width="100" height="100">
           </div>
-          <h2 class="section-title">TiDownloader</h2>
-          <p class="section-desc">
-            Descargador de música autoalojado para tu suscripción de Tidal. Consigue tus canciones y álbumes en <strong>FLAC Lossless (calidad de estudio sin pérdida)</strong>, <strong>MP3 a 320 kbps</strong> o <strong>M4A AAC</strong> para nutrir tu biblioteca de Mixxx.
-          </p>
-        </div>
-
-        <!-- TiDownloader CTA Banner -->
-        <div class="hero-cta-group">
-          <a href="https://github.com/JaviLabarumDJ/tidownloader" target="_blank" rel="noopener noreferrer" class="btn-hero-download tid-btn">
-            <div class="btn-icon-wrapper teal">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-            </div>
-            <div class="btn-text-content">
-              <span class="btn-title">VER EN GITHUB &bull; TIDOWNLOADER</span>
-              <span class="btn-meta">Python 3.10+ &bull; Docker Compose &bull; Web UI Moderna &bull; Código Abierto</span>
-            </div>
-          </a>
-
-          <div class="secondary-actions">
-            <a href="https://github.com/JaviLabarumDJ/tidownloader#readme" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-              <span>Guía de Despliegue</span>
-            </a>
-            <button class="btn-secondary" id="copyDockerBtn">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              <span>Copiar Docker Run</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- TiDownloader Showcase Window -->
-        <div class="mockup-section">
-          <div class="mockup-controls">
-            <button class="mockup-tab-tid active" data-img="assets/tidownloader/search.png" data-title="Búsqueda Inteligente de Tracks, Álbumes y Artistas">
-              <span class="tab-icon">🔍</span>
-              <span>Buscador Integrado</span>
-            </button>
-            <button class="mockup-tab-tid" data-img="assets/tidownloader/queue-with-jobs.png" data-title="Gestión de Cola de Descargas con Progreso en Vivo">
-              <span class="tab-icon">⚡</span>
-              <span>Cola y Progreso</span>
-            </button>
-            <button class="mockup-tab-tid" data-img="assets/tidownloader/library.png" data-title="Explorador y Gestor de Archivos Descargados">
-              <span class="tab-icon">📁</span>
-              <span>Gestor de Archivos</span>
-            </button>
-            <button class="mockup-tab-tid" data-img="assets/tidownloader/settings-with-folder.png" data-title="Configuración de Formatos, Temas y Sincronización Local">
-              <span class="tab-icon">⚙️</span>
-              <span>Sincronización Local</span>
-            </button>
-          </div>
-
-          <div class="mockup-window">
-            <div class="mockup-bar">
-              <div class="window-dots">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-              </div>
-              <div class="window-title" id="tidMockupTitle">TiDownloader Web &bull; Búsqueda Inteligente de Tracks, Álbumes y Artistas</div>
-              <div class="window-status">
-                <span class="live-pill teal">FLAC HI-RES READY</span>
-              </div>
-            </div>
-
-            <div class="mockup-viewport">
-              <img src="assets/tidownloader/search.png" id="tidShowcaseImage" alt="TiDownloader Interfaz Web" class="showcase-img" loading="lazy">
-              <div class="viewport-overlay-tag" id="tidViewportTag">
-                <strong>Descarga en Máxima Calidad</strong>
-                <span>FLAC Lossless &bull; MP3 320kbps &bull; M4A AAC</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TiDownloader Key Features -->
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="card-icon teal">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <h3 class="card-title">Formatos de Audio de Estudio</h3>
-            <p class="card-text">
-              Descarga tus canciones en FLAC sin compresión, M4A AAC a 320 kbps o MP3 clásico de alta tasa de bits. Ideal para que suenen impecables en cualquier equipo de sonido.
+          <div class="about-content">
+            <span class="section-kicker">DETRÁS DEL PROYECTO</span>
+            <h2 class="about-title">Sobre JaviLabarumDJ</h2>
+            <p class="about-text">
+              Soy DJ, desarrollador y apasionado del audio digital. Mi objetivo es crear herramientas de código abierto, libres y de máxima calidad que permitan a cualquier DJ pinchar en directo desde su smartphone o tablet, conectar su controladora favorita y disfrutar de la música sin barreras de licencias ni suscripciones abusivas.
             </p>
-            <span class="card-pill">FLAC / MP3 / M4A</span>
+            <div class="about-actions">
+              <a href="https://instagram.com/javilabarumdj" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <span>Instagram @javilabarumdj</span>
+              </a>
+              <a href="https://youtube.com/@javilabarumdj" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <span>Canal de YouTube</span>
+              </a>
+              <a href="https://github.com/JaviLabarumDJ" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <span>GitHub @JaviLabarumDJ</span>
+              </a>
+            </div>
           </div>
-
-          <div class="feature-card">
-            <div class="card-icon orange">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <h3 class="card-title">Sincronización a Carpeta Local</h3>
-            <p class="card-text">
-              Selecciona cualquier carpeta de tu ordenador desde el navegador mediante la File System Access API. Los archivos completados se guardan automáticamente listos para tu sesión.
-            </p>
-            <span class="card-pill">File System API</span>
-          </div>
-
-          <div class="feature-card">
-            <div class="card-icon purple">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-            </div>
-            <h3 class="card-title">Docker Compose en 1 Comando</h3>
-            <p class="card-text">
-              Despliégalo en tu servidor local, NAS o PC con Docker en cuestión de segundos: <code>docker compose up -d</code>. Interfaz web ligera y ultra-rápida.
-            </p>
-            <span class="card-pill">Docker & Python</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: FAQ -->
-    <section class="section" id="faq">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-kicker">RESOLVEMOS TUS DUDAS</span>
-          <h2 class="section-title">Preguntas Frecuentes</h2>
-        </div>
-
-        <div class="faq-list">
-          <details class="faq-item" open>
-            <summary class="faq-question">
-              <span>¿Ambas aplicaciones son completamente gratuitas?</span>
-              <span class="faq-icon">+</span>
-            </summary>
-            <div class="faq-answer">
-              <p>Sí, al 100%. Tanto <strong>Mixxx DJ para Android</strong> como <strong>TiDownloader</strong> son proyectos de código abierto bajo licencias libres (GPL v2 y MIT). No contienen anuncios, no requieren pagos ni recopilan tus datos personales.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>¿Cómo puedo conectar mi controladora DJ al móvil o tablet?</span>
-              <span class="faq-icon">+</span>
-            </summary>
-            <div class="faq-answer">
-              <p>Simplemente utiliza un cable o adaptador USB-C OTG y conecta el cable USB de tu controladora (Pioneer DDJ-400, DDJ-FLX4, Traktor, Hercules, etc.). Mixxx detectará el dispositivo en cuanto lo conectes y te pedirá confirmar el permiso en Android.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>¿Dónde puedo contactar con JaviLabarumDJ?</span>
-              <span class="faq-icon">+</span>
-            </summary>
-            <div class="faq-answer">
-              <p>Puedes escribirme directamente por mensaje directo en Instagram (<a href="https://instagram.com/javilabarumdj" target="_blank" rel="noopener noreferrer">@javilabarumdj</a>), en TikTok (<a href="https://tiktok.com/@javilabarumdj" target="_blank" rel="noopener noreferrer">@javilabarumdj</a>), o en mi canal de YouTube (<a href="https://youtube.com/@javilabarumdj" target="_blank" rel="noopener noreferrer">@javilabarumdj</a>).</p>
-            </div>
-          </details>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- Toast Notification -->
-  <div class="toast" id="toast" role="status" aria-live="polite">
-    <span class="toast-icon">✓</span>
-    <span class="toast-message">¡Enlace copiado al portapapeles!</span>
-  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -462,45 +213,30 @@
           <img src="assets/logo.svg" alt="JaviLabarumDJ Logo" width="38" height="38">
           <div class="brand-text">
             <span class="brand-name">JAVILABARUM<span class="brand-accent">DJ</span></span>
-            <span class="brand-author">Apps & Music Technology</span>
+            <span class="brand-author">Apps & Music Hub</span>
           </div>
         </div>
         <p class="footer-text">
           Software libre, música y tecnología para DJs y amantes del sonido de alta fidelidad.
         </p>
-        
-        <div class="footer-social-links-grid">
-          <a href="https://instagram.com/javilabarumdj" target="_blank" rel="noopener noreferrer" class="social-chip instagram">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            <span>Instagram: @javilabarumdj</span>
-          </a>
-          <a href="https://tiktok.com/@javilabarumdj" target="_blank" rel="noopener noreferrer" class="social-chip tiktok">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-            <span>TikTok: @javilabarumdj</span>
-          </a>
-          <a href="https://youtube.com/@javilabarumdj" target="_blank" rel="noopener noreferrer" class="social-chip youtube">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            <span>YouTube: @javilabarumdj</span>
-          </a>
-        </div>
       </div>
 
       <div class="footer-col">
         <h4 class="footer-heading">Aplicaciones</h4>
         <ul class="footer-links">
-          <li><a href="#mixxx">Mixxx DJ Android (APK)</a></li>
-          <li><a href="#tidownloader">TiDownloader (FLAC & MP3)</a></li>
-          <li><a href="https://github.com/JaviLabarumDJ/mixxx-android/releases/tag/v1.0.0-android">Release v1.0.0 APK</a></li>
-          <li><a href="https://github.com/JaviLabarumDJ/tidownloader">TiDownloader GitHub</a></li>
+          <li><a href="mixxx/">Mixxx DJ para Android</a></li>
+          <li><a href="tidownloader/">TiDownloader</a></li>
+          <li><a href="https://github.com/JaviLabarumDJ/mixxx-android/releases">Releases de Mixxx</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4 class="footer-heading">GitHub Repositorios</h4>
+        <h4 class="footer-heading">Redes Oficiales</h4>
         <ul class="footer-links">
-          <li><a href="https://github.com/JaviLabarumDJ/mixxx-android">JaviLabarumDJ/mixxx-android</a></li>
-          <li><a href="https://github.com/JaviLabarumDJ/tidownloader">JaviLabarumDJ/tidownloader</a></li>
-          <li><a href="https://github.com/JaviLabarumDJ/javilabarumdj.github.io">JaviLabarumDJ/javilabarumdj.github.io</a></li>
+          <li><a href="https://instagram.com/javilabarumdj" target="_blank" rel="noopener noreferrer">Instagram (@javilabarumdj)</a></li>
+          <li><a href="https://tiktok.com/@javilabarumdj" target="_blank" rel="noopener noreferrer">TikTok (@javilabarumdj)</a></li>
+          <li><a href="https://youtube.com/@javilabarumdj" target="_blank" rel="noopener noreferrer">YouTube (@javilabarumdj)</a></li>
+          <li><a href="https://github.com/JaviLabarumDJ" target="_blank" rel="noopener noreferrer">GitHub (@JaviLabarumDJ)</a></li>
         </ul>
       </div>
     </div>
@@ -508,7 +244,6 @@
     <div class="footer-bottom">
       <div class="footer-bottom-container">
         <p>&copy; 2026 <strong>JaviLabarumDJ</strong> (@javilabarumdj). Software libre para la comunidad DJ.</p>
-        <p class="upstream-note">Mixxx es una marca de su equipo de desarrollo original. Tidal es una marca registrada de Aspiro AB. Este es un portal de herramientas independiente sin fines de lucro.</p>
       </div>
     </div>
   </footer>
