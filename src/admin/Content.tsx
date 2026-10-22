@@ -3,7 +3,7 @@ import { Icon, socialIds } from '../components/Icon'
 import { useToast } from '../components/Toast'
 import type { SiteContent } from '../lib/types'
 import { useAdmin } from './store'
-import { Area, Field, Grid, ImageField, ListEditor, Panel, Select } from './ui'
+import { Area, Field, Grid, ImageField, ListEditor, Panel, Select, TagsField, Toggle } from './ui'
 
 export function ProfileView() {
   const { draft, update } = useAdmin()
@@ -31,13 +31,18 @@ export function ProfileView() {
           <Area label="Subtítulo" value={p.heroSubtitle} onChange={(v) => set({ heroSubtitle: v })} />
         </div>
       </Panel>
-      <Panel title="Sobre mí">
+      <Panel title="Sobre mí" desc="Se muestra en la portada y en la página /sobre-mi.">
         <div className="space-y-3">
           <Grid>
             <Field label="Título" value={p.aboutTitle} onChange={(v) => set({ aboutTitle: v })} />
             <Field label="Subtítulo" value={p.aboutTagline} onChange={(v) => set({ aboutTagline: v })} />
+            <Field label="Ubicación" value={p.location} onChange={(v) => set({ location: v })} />
+            <Field label="Pinchando desde (año)" value={p.since} onChange={(v) => set({ since: v.replace(/\D/g, '').slice(0, 4) })} />
           </Grid>
-          <Area label="Biografía" rows={5} value={p.bio} onChange={(v) => set({ bio: v })} />
+          <TagsField label="Tres palabras que te definen" value={p.words} onChange={(v) => set({ words: v })} />
+          <TagsField label="Estilos / géneros" value={p.genres} onChange={(v) => set({ genres: v })} />
+          <Area label="Bio corta" hint="Resumen de 2-3 frases para la portada." rows={4} value={p.bio} onChange={(v) => set({ bio: v })} />
+          <Area label="Historia completa" hint="Admite Markdown. Separa párrafos con una línea en blanco." rows={12} value={p.story} onChange={(v) => set({ story: v })} />
           <Area label="Llamada a contacto" rows={2} value={p.contactCta} onChange={(v) => set({ contactCta: v })} />
           <p className="pt-2 text-xs font-semibold text-ink-2">Destacados</p>
           <ListEditor
@@ -53,6 +58,67 @@ export function ProfileView() {
               </Grid>
             )}
           />
+        </div>
+      </Panel>
+      <Panel title="Trayectoria" desc="Hitos de la línea temporal. La etiqueta puede ser un año o un texto corto.">
+        <ListEditor
+          items={p.timeline}
+          onChange={(v) => set({ timeline: v })}
+          title={(m) => `${m.label} · ${m.title}`}
+          create={() => ({ label: String(new Date().getFullYear()), title: '', text: '' })}
+          addLabel="Añadir hito"
+          render={(m, upd) => (
+            <>
+              <Grid>
+                <Field label="Etiqueta" value={m.label} onChange={(v) => upd({ label: v })} />
+                <Field label="Título" value={m.title} onChange={(v) => upd({ title: v })} />
+              </Grid>
+              <Area label="Texto" rows={2} value={m.text} onChange={(v) => upd({ text: v })} />
+            </>
+          )}
+        />
+      </Panel>
+      <Panel title="Referentes">
+        <ListEditor
+          items={p.influences}
+          onChange={(v) => set({ influences: v })}
+          title={(f) => `${f.name} · ${f.role}`}
+          create={() => ({ name: '', role: 'DJ', note: '' })}
+          addLabel="Añadir referente"
+          render={(f, upd) => (
+            <Grid>
+              <Field label="Nombre" value={f.name} onChange={(v) => upd({ name: v })} />
+              <Field label="Rol" value={f.role} onChange={(v) => upd({ role: v })} />
+              <Field label="Por qué" value={f.note} onChange={(v) => upd({ note: v })} className="sm:col-span-2" />
+            </Grid>
+          )}
+        />
+      </Panel>
+      <Panel title="Equipo">
+        <ListEditor
+          items={p.gear}
+          onChange={(v) => set({ gear: v })}
+          title={(g) => `${g.icon} ${g.title}`}
+          create={() => ({ icon: '🎛️', title: '', text: '' })}
+          addLabel="Añadir equipo"
+          render={(g, upd) => (
+            <Grid>
+              <Field label="Nombre" value={g.title} onChange={(v) => upd({ title: v })} />
+              <Field label="Emoji" value={g.icon} onChange={(v) => upd({ icon: v })} />
+              <Field label="Descripción" value={g.text} onChange={(v) => upd({ text: v })} className="sm:col-span-2" />
+            </Grid>
+          )}
+        />
+      </Panel>
+      <Panel title="Contrataciones" desc="Tarjeta de contacto en la portada y en /sobre-mi. Instagram siempre es la opción principal.">
+        <div className="space-y-4">
+          <Toggle label={p.booking.enabled ? 'Visible' : 'Oculta'} checked={p.booking.enabled} onChange={(v) => set({ booking: { ...p.booking, enabled: v } })} />
+          <Area label="Texto" rows={2} value={p.booking.text} onChange={(v) => set({ booking: { ...p.booking, text: v } })} />
+          <Grid>
+            <Field label="Teléfono" hint="Con prefijo, p. ej. +34600000000. Vacío para ocultarlo." value={p.booking.phone} onChange={(v) => set({ booking: { ...p.booking, phone: v } })} />
+            <Field label="Email (opcional)" type="email" value={p.booking.email} onChange={(v) => set({ booking: { ...p.booking, email: v } })} />
+          </Grid>
+          <Toggle label="Mostrar botón de WhatsApp" checked={p.booking.whatsapp} onChange={(v) => set({ booking: { ...p.booking, whatsapp: v } })} />
         </div>
       </Panel>
     </div>

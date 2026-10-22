@@ -12,7 +12,7 @@ const accents: { value: Accent; label: string }[] = [
 ]
 
 const slugify = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-const RESERVED = ['apps', 'admin', 'assets', 'uploads']
+const RESERVED = ['apps', 'admin', 'assets', 'uploads', 'sobre-mi', 'static']
 
 const blankApp = (name: string, slug: string): AppEntry => ({
   slug, published: false, name, shortName: name, accent: 'purple', category: 'dj', icon: 'assets/logo.svg', cover: '',

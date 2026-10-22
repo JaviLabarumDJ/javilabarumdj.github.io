@@ -29,9 +29,10 @@ function write(path, html) {
 }
 
 const apps = content.apps.filter((a) => a.published)
-const routes = ['/', '/apps/']
+const routes = ['/', '/apps/', '/sobre-mi/']
 
 write('/apps/', page({ title: `Catálogo de apps · ${content.profile.name}`, description: 'Software libre hecho por y para DJs.', path: '/apps/' }))
+write('/sobre-mi/', page({ title: `Sobre mí · ${content.profile.name}`, description: content.profile.bio, path: '/sobre-mi/', image: content.profile.avatar }))
 for (const a of apps) {
   const path = `/${a.slug}/`
   routes.push(path)

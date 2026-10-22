@@ -1,4 +1,5 @@
 import type { SiteContent } from '../lib/types'
+import { normalize } from '../lib/content'
 
 export const REPO = 'JaviLabarumDJ/javilabarumdj.github.io'
 export const BRANCH = 'main'
@@ -57,7 +58,7 @@ export function createApi(token: string) {
 
     async loadContent(): Promise<{ content: SiteContent; sha: string }> {
       const f = await gh<{ content: string; sha: string }>(token, `/repos/${REPO}/contents/${CONTENT_PATH}?ref=${BRANCH}&t=${Date.now()}`)
-      return { content: JSON.parse(b64decode(f.content)), sha: f.sha }
+      return { content: normalize(JSON.parse(b64decode(f.content))), sha: f.sha }
     },
 
     async saveContent(content: SiteContent, sha: string, message: string) {

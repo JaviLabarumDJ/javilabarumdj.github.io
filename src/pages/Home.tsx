@@ -6,6 +6,7 @@ import { useMeta } from '../lib/useMeta'
 import { Icon } from '../components/Icon'
 import { Visualizer } from '../components/Visualizer'
 import { Reveal, SectionHeader } from '../components/Reveal'
+import { BookingCard, YoutubeCta } from './About'
 import { AppCard } from '../components/AppBits'
 
 const youtubeId = (url: string) => url.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/)?.[1]
@@ -145,20 +146,25 @@ function Events() {
 
 function About() {
   const p = site.profile
-  const ig = site.socials.find((s) => s.id === 'instagram')
   return (
     <section id="sobre-mi" className="scroll-mt-16 border-t border-line py-20 sm:py-28">
       <div className="container-x grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <Reveal className="relative mx-auto w-full max-w-sm">
           <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-orange/30 to-cyan/30 blur-2xl" />
           <img src={asset(p.avatar)} alt={p.name} loading="lazy" className="relative aspect-[4/5] w-full rounded-[1.75rem] border border-line-strong object-cover" />
+          <div className="absolute -bottom-5 left-1/2 flex -translate-x-1/2 gap-1.5 rounded-full border border-line-strong bg-bg/90 p-1.5 backdrop-blur">
+            {p.words.map((w) => <span key={w} className="rounded-full bg-white/5 px-3 py-1.5 text-xs font-bold">{w}</span>)}
+          </div>
         </Reveal>
         <div>
           <Reveal>
-            <p className="kicker mb-3">Detrás del proyecto</p>
+            <p className="kicker mb-3 flex items-center gap-2"><Icon name="pin" size={14} /> {p.location}</p>
             <h2 className="text-3xl font-extrabold sm:text-5xl">{p.aboutTitle}</h2>
             <p className="mt-2 font-mono text-sm text-orange">{p.aboutTagline}</p>
             <p className="mt-6 text-base leading-relaxed text-ink-2 sm:text-lg">{p.bio}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {p.genres.map((g) => <span key={g} className="rounded-full border border-cyan/30 bg-cyan/10 px-3 py-1 text-xs font-semibold">{g}</span>)}
+            </div>
           </Reveal>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {p.highlights.map((h, i) => (
@@ -171,13 +177,15 @@ function About() {
               </Reveal>
             ))}
           </div>
-          {p.contactCta && (
-            <Reveal className="mt-8 flex flex-col gap-4 rounded-2xl border border-line bg-gradient-to-r from-cyan/10 to-orange/10 p-5 sm:flex-row sm:items-center">
-              <p className="flex-1 text-sm text-ink-2">{p.contactCta}</p>
-              {ig && <a href={ig.url} target="_blank" rel="noopener noreferrer" className="btn-primary shrink-0"><Icon name="instagram" size={16} /> Escríbeme</a>}
-            </Reveal>
-          )}
+          <Reveal className="mt-8 flex flex-wrap gap-3">
+            <Link to="/sobre-mi" className="btn-primary">Conoce mi historia <Icon name="arrow" size={16} /></Link>
+            {p.booking?.enabled && <a href="#contratar" className="btn-ghost">Contratar</a>}
+          </Reveal>
         </div>
+      </div>
+      <div id="contratar" className="container-x mt-16 max-w-5xl scroll-mt-20 space-y-6 sm:mt-24">
+        <Reveal><YoutubeCta /></Reveal>
+        <Reveal><BookingCard compact /></Reveal>
       </div>
     </section>
   )

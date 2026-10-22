@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { SiteContent } from '../lib/types'
+import { normalize } from '../lib/content'
 import { createApi, type Api, type GhUser } from './api'
 
 const DRAFT_KEY = 'jl-admin-draft'
@@ -36,7 +37,7 @@ export function AdminProvider({ token, user, initial, initialSha, children }: {
   const [published, setPublished] = useState(initial)
   const [sha, setSha] = useState(initialSha)
   const saved = readDraft()
-  const [draft, setDraft] = useState<SiteContent>(saved?.draft ?? initial)
+  const [draft, setDraft] = useState<SiteContent>(saved?.draft ? normalize(saved.draft) : initial)
   const [baseSha, setBaseSha] = useState(saved?.baseSha ?? initialSha)
 
   const dirty = useMemo(() => JSON.stringify(draft) !== JSON.stringify(published), [draft, published])

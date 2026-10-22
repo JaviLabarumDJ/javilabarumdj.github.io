@@ -8,6 +8,10 @@ export interface Step { title: string; text: string; code?: string }
 export interface Spec { icon: string; component: string; min: string; rec: string; recDetail: string }
 export interface Faq { q: string; a: string }
 
+export interface Milestone { label: string; title: string; text: string }
+export interface Influence { name: string; role: string; note: string }
+export interface Booking { enabled: boolean; text: string; phone: string; whatsapp: boolean; email: string }
+
 export interface EventItem { date: string; title: string; venue: string; city: string; url: string }
 export interface Mix { title: string; url: string; date: string }
 
@@ -55,6 +59,15 @@ export interface Profile {
   bio: string
   highlights: Highlight[]
   contactCta: string
+  location: string
+  since: string
+  words: string[]
+  genres: string[]
+  story: string
+  timeline: Milestone[]
+  gear: Highlight[]
+  influences: Influence[]
+  booking: Booking
 }
 
 export interface SiteContent {

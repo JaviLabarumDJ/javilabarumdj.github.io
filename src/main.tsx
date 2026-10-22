@@ -3,12 +3,13 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { MotionConfig } from 'motion/react'
 import './index.css'
-import { site } from './lib/content'
+import { normalize, site } from './lib/content'
 import { ToastProvider } from './components/Toast'
 import Layout from './components/Layout'
 import Home, { NotFound } from './pages/Home'
 import Catalog from './pages/Catalog'
 import AppPage from './pages/AppPage'
+import About from './pages/About'
 
 const AdminApp = lazy(() => import('./admin/AdminApp'))
 const PREVIEW_KEY = 'jl-preview'
@@ -17,7 +18,7 @@ const PREVIEW_KEY = 'jl-preview'
 let preview = false
 try {
   const raw = localStorage.getItem(PREVIEW_KEY)
-  if (raw && !location.pathname.startsWith('/admin')) { Object.assign(site, JSON.parse(raw)); preview = true }
+  if (raw && !location.pathname.startsWith('/admin')) { Object.assign(site, normalize(JSON.parse(raw))); preview = true }
 } catch { /* ignore */ }
 
 function PreviewBanner() {
@@ -41,6 +42,7 @@ createRoot(document.getElementById('root')!).render(
             <Route element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="apps" element={<Catalog />} />
+              <Route path="sobre-mi" element={<About />} />
               <Route path=":slug" element={<AppPage />} />
               <Route path="*" element={<NotFound />} />
             </Route>

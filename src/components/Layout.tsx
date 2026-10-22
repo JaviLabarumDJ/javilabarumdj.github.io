@@ -42,7 +42,7 @@ function useNavItems() {
   const items = [{ to: '/', label: 'Inicio' }, { to: '/apps', label: 'Apps' }]
   if (site.mixes.length) items.push({ to: '/#mixes', label: 'Mixes' })
   if (site.events.length) items.push({ to: '/#eventos', label: 'Fechas' })
-  items.push({ to: '/#sobre-mi', label: 'Sobre mí' })
+  items.push({ to: '/sobre-mi', label: 'Sobre mí' })
   return items
 }
 
@@ -119,7 +119,7 @@ function Navbar() {
                 </AnimatePresence>
               </div>
             ) : (
-              <Link key={it.to} to={it.to} className={`rounded-lg px-3 py-2 text-sm font-medium transition hover:text-ink ${pathname === it.to && !hash ? 'text-ink' : 'text-ink-2'}`}>
+              <Link key={it.to} to={it.to} className={`rounded-lg px-3 py-2 text-sm font-medium transition hover:text-ink ${pathname.replace(/\/$/, '') === it.to.replace(/\/$/, '') && !hash ? 'text-ink' : 'text-ink-2'}`}>
                 {it.label}
               </Link>
             ),
@@ -194,6 +194,7 @@ function Footer() {
               <li key={a.slug}><Link className="hover:text-ink" to={`/${a.slug}`}>{a.name}</Link></li>
             ))}
             <li><Link className="hover:text-ink" to="/apps">Todas las apps</Link></li>
+            <li><Link className="hover:text-ink" to="/sobre-mi">Sobre mí y contrataciones</Link></li>
           </ul>
         </div>
         <div>

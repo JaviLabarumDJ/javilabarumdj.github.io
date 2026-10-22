@@ -1,7 +1,24 @@
 import raw from '../content/site.json'
 import type { SiteContent } from './types'
 
-export const site = raw as SiteContent
+/** Rellena campos que falten (contenido o borradores de versiones anteriores). */
+export function normalize(c: SiteContent): SiteContent {
+  c.events ??= []
+  c.mixes ??= []
+  const p = c.profile
+  p.location ??= ''
+  p.since ??= ''
+  p.words ??= []
+  p.genres ??= []
+  p.story ??= ''
+  p.timeline ??= []
+  p.gear ??= []
+  p.influences ??= []
+  p.booking ??= { enabled: false, text: '', phone: '', whatsapp: false, email: '' }
+  return c
+}
+
+export const site = normalize(raw as SiteContent)
 
 export const publishedApps = () => site.apps.filter((a) => a.published)
 export const findApp = (slug: string) => publishedApps().find((a) => a.slug === slug)
