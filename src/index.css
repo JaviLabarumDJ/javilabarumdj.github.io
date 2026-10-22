@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-bg: #07080c;
+  --color-bg-2: #0c0e15;
+  --color-surface: #11141d;
+  --color-surface-2: #171b27;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+  --color-ink: #f2f4f8;
+  --color-ink-2: #a9b0c2;
+  --color-ink-3: #6b7287;
+  --color-cyan: #00e5ff;
+  --color-teal: #00d4c5;
+  --color-orange: #ff6a3d;
+  --color-purple: #9b7bff;
+  --color-danger: #ff4d6a;
+  --color-ok: #3ee08f;
+
+  --animate-pulse-dot: pulse-dot 1.8s ease-out infinite;
+  @keyframes pulse-dot {
+    0% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 60%, transparent); }
+    100% { box-shadow: 0 0 0 10px transparent; }
+  }
+  --animate-spin-slow: spin 14s linear infinite;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+  @keyframes shimmer { to { background-position: -200% 0; } }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: color-mix(in srgb, var(--color-cyan) 35%, transparent); }
+  :focus-visible { outline: 2px solid var(--color-cyan); outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3, h4 { @apply font-display tracking-tight; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+@utility container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+@utility kicker { @apply font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--accent,var(--color-cyan))]; }
+@utility gradient-text {
+  background: linear-gradient(100deg, var(--color-cyan) 0%, var(--color-purple) 50%, var(--color-orange) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+@utility card { @apply rounded-2xl border border-line bg-surface/70 backdrop-blur-sm; }
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition
+    active:scale-[.98] disabled:opacity-50 disabled:pointer-events-none select-none;
+}
+@utility btn-primary {
+  @apply btn text-bg;
+  background: var(--accent, var(--color-cyan));
+  box-shadow: 0 8px 30px -8px var(--accent, var(--color-cyan));
+  &:hover { filter: brightness(1.1); }
+}
+@utility btn-ghost { @apply btn border border-line-strong bg-white/[.03] text-ink hover:bg-white/[.07] hover:border-white/25; }
+@utility chip { @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white/[.03] px-3 py-1 text-xs font-medium text-ink-2; }
+@utility skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.09) 50%, rgba(255,255,255,.04) 100%);
+  background-size: 200% 100%;
+  @apply animate-shimmer rounded-md;
+}
+@utility prose-dj {
+  @apply text-ink-2 leading-relaxed;
+  & strong { @apply text-ink font-semibold; }
+  & a { @apply text-[var(--accent,var(--color-cyan))] underline underline-offset-2; }
+  & code { @apply font-mono text-[0.85em] rounded bg-white/5 px-1.5 py-0.5 text-ink; }
+  & ul { @apply list-disc pl-5 space-y-1 my-2; }
+  & ol { @apply list-decimal pl-5 space-y-1 my-2; }
+  & h1, & h2, & h3 { @apply text-ink font-semibold mt-4 mb-2 text-base; }
+  & p { @apply my-2; }
+}
+
+@layer components {
+  .noise::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: .035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}

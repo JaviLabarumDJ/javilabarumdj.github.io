@@ -1,0 +1,131 @@
+{
+  "profile": {
+    "name": "JaviLabarumDJ",
+    "handle": "@javilabarumdj",
+    "role": "DJ & Developer",
+    "avatar": "assets/javi_headphones.jpg",
+    "heroKicker": "DJ, desarrollador y creador de contenido",
+    "heroTitle": "Software y herramientas DJ",
+    "heroHighlight": "creadas para la cabina moderna",
+    "heroSubtitle": "Aplicaciones libres para pinchar desde cualquier pantalla y conseguir tu música con la máxima calidad de audio. Hechas en cabina, probadas en cabina.",
+    "aboutTitle": "Sobre JaviLabarumDJ",
+    "aboutTagline": "DJ, desarrollador y creador de contenido",
+    "bio": "Soy DJ y apasionado del audio digital y la tecnología. Mi objetivo es llevar la cabina DJ profesional a pantallas táctiles y tablets Android, y crear herramientas libres y de alta fidelidad para pinchar y disfrutar de la música sin barreras de licencias ni suscripciones abusivas.",
+    "highlights": [
+      { "icon": "🎧", "title": "DJ en directo", "text": "Sesiones, directos y mezclas" },
+      { "icon": "⚡", "title": "Modo WAVE de cabina", "text": "Portado a tablets y móviles" },
+      { "icon": "🎵", "title": "Audio lossless", "text": "Herramientas FLAC 24-bit" },
+      { "icon": "💻", "title": "100% open source", "text": "Software libre para DJs" }
+    ],
+    "contactCta": "¿Tienes una idea para una app, un mapeo de controladora o quieres contratarme para una sesión? Escríbeme por Instagram."
+  },
+  "socials": [
+    { "id": "instagram", "label": "Instagram", "handle": "@javilabarumdj", "url": "https://instagram.com/javilabarumdj" },
+    { "id": "tiktok", "label": "TikTok", "handle": "@javilabarumdj", "url": "https://tiktok.com/@javilabarumdj" },
+    { "id": "youtube", "label": "YouTube", "handle": "@javilabarumdj", "url": "https://youtube.com/@javilabarumdj" },
+    { "id": "github", "label": "GitHub", "handle": "@JaviLabarumDJ", "url": "https://github.com/JaviLabarumDJ" }
+  ],
+  "events": [],
+  "mixes": [],
+  "apps": [
+    {
+      "slug": "mixxx",
+      "published": true,
+      "name": "Mixxx DJ para Android",
+      "shortName": "Mixxx Android",
+      "accent": "cyan",
+      "category": "dj",
+      "icon": "assets/logo.svg",
+      "cover": "assets/tablet_wave_mode.png",
+      "tagline": "Tu cabina DJ en tu pantalla táctil",
+      "summary": "La cabina DJ open source más potente, portada a Android. Mezcla en pantallas táctiles con faders optimizados, ondas apiladas profesionales (Modo WAVE) y controladoras DJ USB plug-and-play.",
+      "description": "El legendario software open source **Mixxx** adaptado a pantallas táctiles y controladoras USB. Con el modo de ondas **WAVE de cabina**, **Split Cue** y motor de audio de 32 bits y baja latencia.",
+      "tags": ["Android 10 – 15", "Modo WAVE", "USB MIDI OTG", "Split Cue"],
+      "license": "GPL v2",
+      "repo": "JaviLabarumDJ/mixxx-android",
+      "assetPattern": "\\.apk$",
+      "primaryCta": { "label": "Descargar APK", "type": "release" },
+      "fallback": { "version": "v1.4.0", "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.4.0-android/mixxx-android-v1.4.0.apk", "size": "249 MB" },
+      "badges": ["Probado en POCO X6 Pro y Lenovo Pad", "Firmado · sin publicidad", "Código abierto GPL v2"],
+      "screenshots": [
+        { "src": "assets/tablet_wave_mode.png", "label": "Modo WAVE", "icon": "🌊", "title": "WAVE dashboard de cabina", "caption": "Reloj monoespaciado, pitch exacto y BPM en grande" },
+        { "src": "assets/tablet_dj_mode.png", "label": "Mesa táctil", "icon": "🎛️", "title": "Consola táctil de 2 decks", "caption": "EQ de 3 bandas, filtros y faders con recentrado" },
+        { "src": "assets/phone_wave_mode.png", "label": "WAVE en móvil", "icon": "📱", "title": "Ondas RGB dinámicas", "caption": "Seguimiento de fase visual y salto por aguja" },
+        { "src": "assets/phone_dj_loaded.png", "label": "Decks cargados", "icon": "🎧", "title": "QuickLoad drawers", "caption": "Carga canciones al vuelo sin perder el ritmo" }
+      ],
+      "featuresTitle": "Diseñado por y para DJs",
+      "featuresIntro": "No es un reproductor simplificado: es el motor nativo completo de Mixxx corriendo en Android con punto flotante de 32 bits y aceleración gráfica QML.",
+      "features": [
+        { "icon": "🌊", "title": "Modo WAVE de cabina", "text": "Ondas apiladas RGB en tiempo real para beatmatching visual, reloj digital (REMAIN/TIME), tempo exacto (±0.00%) y salto táctil por aguja.", "pill": "Ondas apiladas" },
+        { "icon": "🎚️", "title": "Mesa táctil y faders mejorados", "text": "Faders de volumen y pitch sin tirones, recentrado al 0.0% con doble toque, EQ de 3 bandas y Quick Filters dedicados.", "pill": "Multi-touch 120 Hz" },
+        { "icon": "🔌", "title": "Controladoras USB plug & play", "text": "Conecta tu controladora (DDJ, Traktor Kontrol, Hercules, Numark…) por USB-C OTG con detección automática y sin drivers.", "pill": "USB OTG host" },
+        { "icon": "🎧", "title": "Split Cue (preescucha)", "text": "¿Sin tarjeta de sonido externa? Activa SPLIT para enviar la preescucha por un auricular y el máster por el otro.", "pill": "Auriculares estándar" }
+      ],
+      "stepsTitle": "Instálalo en 3 pasos",
+      "steps": [
+        { "title": "Descarga el APK", "text": "Pulsa «Descargar APK» para obtener el paquete firmado directamente desde GitHub." },
+        { "title": "Permite la instalación", "text": "Si Android pide permiso para «Instalar aplicaciones desconocidas», dale a Permitir." },
+        { "title": "¡Abre y a mezclar!", "text": "Inicia Mixxx, acepta los permisos de audio y almacenamiento y empieza tu sesión." }
+      ],
+      "specs": [
+        { "icon": "📱", "component": "Sistema operativo", "min": "Android 10 (API 29)", "rec": "Android 13, 14 o 15", "recDetail": "HyperOS, OneUI, Pixel OS, ZUI" },
+        { "icon": "⚡", "component": "Procesador", "min": "ARM64 (ARMv8-A)", "rec": "Snapdragon 7 / 8 Gen", "recDetail": "o Dimensity 8000+ / Google Tensor" },
+        { "icon": "🧠", "component": "Memoria RAM", "min": "4 GB", "rec": "6 – 8 GB", "recDetail": "Mezcla fluida y cálculo instantáneo de BPM" },
+        { "icon": "💾", "component": "Almacenamiento", "min": "500 MB libres", "rec": "2 GB o más", "recDetail": "Para tu biblioteca en FLAC/MP3" },
+        { "icon": "🖥️", "component": "Pantalla", "min": "5,5\" 1080p 60 Hz", "rec": "AMOLED 90/120 Hz o tablet 10\"+", "recDetail": "Visión panorámica para el modo WAVE" },
+        { "icon": "🎛️", "component": "Audio y conectividad", "min": "Jack 3,5 mm o USB-C a jack", "rec": "Soporte USB OTG", "recDetail": "Para controladoras o interfaces de audio" }
+      ],
+      "tip": "**Consejo para latencia ultra baja:** activa el *Modo rendimiento / Game Turbo* de tu dispositivo y desactiva el ahorro de batería para Mixxx. El motor de audio obtendrá respuestas por debajo de 10 ms.",
+      "faq": [
+        { "q": "¿Es 100% gratuita y sin anuncios?", "a": "Totalmente. Mixxx es software libre bajo GNU GPL v2. Este port es gratuito, sin compras integradas, sin suscripciones y sin publicidad ni rastreo." },
+        { "q": "¿Puedo conectar mi controladora DJ por USB?", "a": "Sí. Conecta un adaptador USB-C OTG y enchufa tu controladora (DDJ, Traktor Kontrol, Hercules, Numark…). La app la detecta y pide los permisos USB en pantalla." }
+      ]
+    },
+    {
+      "slug": "tidownloader",
+      "published": true,
+      "name": "TiDownloader",
+      "shortName": "TiDownloader",
+      "accent": "teal",
+      "category": "audio",
+      "icon": "assets/tidownloader/logo.svg",
+      "cover": "assets/tidownloader/search.png",
+      "tagline": "Tu música en FLAC sin pérdida",
+      "summary": "Descargador autoalojado para tu suscripción de Tidal. Busca temas, álbumes o playlists y descárgalos en FLAC lossless o MP3 320 kbps directamente a tu carpeta de música.",
+      "description": "Descargador autoalojado para tu suscripción de Tidal. Descarga pistas, álbumes y playlists en **FLAC lossless** o **MP3 a 320 kbps** directamente a tu ordenador para cargarlas en Mixxx.",
+      "tags": ["FLAC lossless", "MP3 320k", "Docker", "Sincronización local"],
+      "license": "MIT",
+      "repo": "JaviLabarumDJ/tidownloader",
+      "assetPattern": "",
+      "primaryCta": { "label": "Ver en GitHub", "type": "repo" },
+      "fallback": { "version": "", "url": "https://github.com/JaviLabarumDJ/tidownloader", "size": "" },
+      "badges": ["Self-hosted", "Sin guardar contraseñas", "Código abierto MIT"],
+      "screenshots": [
+        { "src": "assets/tidownloader/search.png", "label": "Buscador", "icon": "🔍", "title": "Búsqueda de tracks, álbumes y artistas", "caption": "FLAC lossless · MP3 320 kbps · M4A AAC" },
+        { "src": "assets/tidownloader/queue-with-jobs.png", "label": "Cola", "icon": "⚡", "title": "Cola de descargas con progreso en vivo", "caption": "Persistente ante reinicios" },
+        { "src": "assets/tidownloader/library.png", "label": "Biblioteca", "icon": "📁", "title": "Gestor de archivos descargados", "caption": "Organiza tu biblioteca DJ" },
+        { "src": "assets/tidownloader/settings-with-folder.png", "label": "Ajustes", "icon": "⚙️", "title": "Formatos y sincronización local", "caption": "Elige la carpeta de destino" }
+      ],
+      "featuresTitle": "Tu colección, impecable",
+      "featuresIntro": "Para DJs y audiófilos que necesitan que cada tema suene perfecto en sistemas de sonido profesionales.",
+      "features": [
+        { "icon": "💎", "title": "Calidad FLAC de estudio", "text": "FLAC lossless, M4A AAC 320 kbps o MP3 320 kbps. Si un tema no tiene Hi-Res, pasa automáticamente a lossless.", "pill": "FLAC / MP3 / M4A" },
+        { "icon": "📂", "title": "Sincronización a carpeta local", "text": "Elige cualquier carpeta con el selector nativo del navegador (File System Access API) y los temas irán directos a tu biblioteca.", "pill": "File System API" },
+        { "icon": "🐳", "title": "Docker Compose listo", "text": "Despliegue en Linux, Mac o Windows. La cola de descargas persiste en SQLite ante reinicios del contenedor.", "pill": "Docker + SQLite" },
+        { "icon": "🔐", "title": "Autenticación OAuth segura", "text": "No guarda contraseñas: se vincula con tu cuenta de Tidal mediante el código oficial de dispositivo.", "pill": "OAuth device link" }
+      ],
+      "stepsTitle": "En marcha en 2 minutos",
+      "steps": [
+        { "title": "Clona el repositorio", "text": "Descarga el código en tu máquina.", "code": "git clone https://github.com/JaviLabarumDJ/tidownloader.git && cd tidownloader" },
+        { "title": "Arranca con Docker", "text": "Levanta el contenedor en segundo plano.", "code": "docker compose up -d" },
+        { "title": "Abre el navegador", "text": "Entra en http://localhost:8000, vincula tu cuenta y empieza a descargar." }
+      ],
+      "specs": [],
+      "tip": "",
+      "faq": [
+        { "q": "¿Necesito una suscripción de Tidal?", "a": "Sí. TiDownloader usa la API oficial de Tidal y requiere vincular tu cuenta activa para descargar lo que tu suscripción permite." },
+        { "q": "¿Puedo pasar los temas a mi móvil para Mixxx?", "a": "Claro. Los archivos quedan en la carpeta que elijas (ordenador o NAS). Cópialos al móvil o a un pendrive USB OTG y cárgalos en Mixxx para Android." }
+      ]
+    }
+  ]
+}
