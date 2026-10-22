@@ -157,7 +157,8 @@
         "Android 10 – 15",
         "Modo WAVE",
         "USB MIDI OTG",
-        "Split Cue"
+        "Split Cue",
+        "Beatgrid táctil"
       ],
       "license": "GPL v2",
       "repo": "JaviLabarumDJ/mixxx-android",
@@ -167,14 +168,15 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.4.0",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.4.0-android/mixxx-android-v1.4.0.apk",
+        "version": "v1.4.1",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.4.1-android/mixxx-android-v1.4.1.apk",
         "size": "249 MB"
       },
       "badges": [
         "Probado en POCO X6 Pro y Lenovo Pad",
         "Firmado · sin publicidad",
-        "Código abierto GPL v2"
+        "Código abierto GPL v2",
+        "Ajuste táctil de Beatgrid"
       ],
       "screenshots": [
         {
@@ -232,6 +234,18 @@
           "title": "Split Cue (preescucha)",
           "text": "¿Sin tarjeta de sonido externa? Activa SPLIT para enviar la preescucha por un auricular y el máster por el otro.",
           "pill": "Auriculares estándar"
+        },
+        {
+          "icon": "🎯",
+          "title": "Ajuste táctil de rejilla (Beatgrid)",
+          "text": "Toca el BPM o el botón Rejilla para corregir la cuadrícula al vuelo: desfase de medio beat, primer tiempo, ajuste fino antes/después y bloqueo de BPM.",
+          "pill": "Beatgrid Popup"
+        },
+        {
+          "icon": "📂",
+          "title": "Navegación y listas Rekordbox",
+          "text": "Explora tu biblioteca desde la rueda BROWSE de tu controladora física y gestiona copias de seguridad de listas y pendrives USB.",
+          "pill": "Biblioteca USB"
         }
       ],
       "stepsTitle": "Instálalo en 3 pasos",
