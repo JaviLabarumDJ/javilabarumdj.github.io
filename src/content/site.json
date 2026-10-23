@@ -158,7 +158,8 @@
         "Modo WAVE",
         "USB MIDI OTG",
         "Split Cue",
-        "Beatgrid táctil"
+        "Beatgrid táctil",
+        "Top Bar modular"
       ],
       "license": "GPL v2",
       "repo": "JaviLabarumDJ/mixxx-android",
@@ -168,15 +169,16 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.4.1",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.4.1-android/mixxx-android-v1.4.1.apk",
+        "version": "v1.4.2",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.4.2-android/mixxx-android-v1.4.2.apk",
         "size": "249 MB"
       },
       "badges": [
         "Probado en POCO X6 Pro y Lenovo Pad",
         "Firmado · sin publicidad",
         "Código abierto GPL v2",
-        "Ajuste táctil de Beatgrid"
+        "UI fluida (1% CPU en reposo)",
+        "Top Bar configurable"
       ],
       "screenshots": [
         {
@@ -244,8 +246,20 @@
         {
           "icon": "📂",
           "title": "Navegación y listas Rekordbox",
-          "text": "Explora tu biblioteca desde la rueda BROWSE de tu controladora física y gestiona copias de seguridad de listas y pendrives USB.",
+          "text": "Explora con la rueda BROWSE, mantén las fechas de adición de Rekordbox y ordena por la nueva columna # de posición.",
           "pill": "Biblioteca USB"
+        },
+        {
+          "icon": "⚡",
+          "title": "Máxima fluidez y bajo consumo",
+          "text": "Redibujado dinámico de ondas a demanda: la CPU en reposo baja del 74% a apenas un 1%, sin microcortes de audio.",
+          "pill": "Optimización v1.4.2"
+        },
+        {
+          "icon": "🧭",
+          "title": "Barra superior personalizada",
+          "text": "Elige en Ajustes qué vistas (DJ, WAVE, LIB, CTL) y botones de acción (LOAD, FX, SPLIT, etc.) quieres visibles.",
+          "pill": "Top Bar Modular"
         }
       ],
       "stepsTitle": "Instálalo en 3 pasos",
