@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'motion/react'
 import { asset, publishedApps, site } from '../lib/content'
 import { Icon } from './Icon'
+import { usePageviews } from '../lib/analytics'
 
 function Brand({ sub = 'Apps & Music Hub' }: { sub?: string }) {
   return (
@@ -18,7 +19,7 @@ function Brand({ sub = 'Apps & Music Hub' }: { sub?: string }) {
   )
 }
 
-export function SocialLinks({ size = 18, className = '' }: { size?: number; className?: string }) {
+export function SocialLinks({ size = 18, className = '', where = 'header' }: { size?: number; className?: string; where?: string }) {
   return (
     <div className={`flex items-center gap-1 ${className}`}>
       {site.socials.map((s) => (
@@ -27,6 +28,9 @@ export function SocialLinks({ size = 18, className = '' }: { size?: number; clas
           href={s.url}
           target="_blank"
           rel="noopener noreferrer"
+          data-track="social"
+          data-track-network={s.id}
+          data-track-where={where}
           aria-label={`${s.label} ${s.handle}`}
           title={`${s.label} ${s.handle}`}
           className="grid size-9 place-items-center rounded-lg text-ink-2 transition hover:bg-white/5 hover:text-ink"
@@ -168,7 +172,7 @@ function Navbar() {
               <Link to="/apps" className="mt-1 flex items-center justify-between rounded-xl px-3 py-3 text-sm font-semibold text-cyan">
                 Ver catálogo completo <Icon name="arrow" size={16} />
               </Link>
-              <SocialLinks size={22} className="mt-8 justify-center gap-3" />
+              <SocialLinks size={22} className="mt-8 justify-center gap-3" where="menu" />
             </nav>
           </motion.div>
         )}
@@ -185,7 +189,7 @@ function Footer() {
         <div className="lg:col-span-2">
           <Brand />
           <p className="mt-4 max-w-sm text-sm text-ink-2">Software libre, música y tecnología para DJs y amantes del sonido de alta fidelidad.</p>
-          <SocialLinks className="-ml-2 mt-4" />
+          <SocialLinks className="-ml-2 mt-4" where="footer" />
         </div>
         <div>
           <h4 className="mb-4 text-sm font-semibold">Aplicaciones</h4>
@@ -201,7 +205,7 @@ function Footer() {
           <h4 className="mb-4 text-sm font-semibold">Redes</h4>
           <ul className="space-y-2.5 text-sm text-ink-2">
             {site.socials.map((s) => (
-              <li key={s.id}><a className="hover:text-ink" href={s.url} target="_blank" rel="noopener noreferrer">{s.label} <span className="text-ink-3">{s.handle}</span></a></li>
+              <li key={s.id}><a className="hover:text-ink" data-track="social" data-track-network={s.id} data-track-where="footer" href={s.url} target="_blank" rel="noopener noreferrer">{s.label} <span className="text-ink-3">{s.handle}</span></a></li>
             ))}
           </ul>
         </div>
@@ -209,6 +213,7 @@ function Footer() {
       <div className="border-t border-line">
         <div className="container-x flex flex-col items-center justify-between gap-2 py-5 text-xs text-ink-3 sm:flex-row">
           <p>© {new Date().getFullYear()} {site.profile.name} ({site.profile.handle}). Software libre para la comunidad DJ.</p>
+          <p>Estadísticas anónimas sin cookies</p>
           <Link to="/admin" className="hover:text-ink-2">Panel</Link>
         </div>
       </div>
@@ -218,6 +223,7 @@ function Footer() {
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
+  usePageviews()
   useEffect(() => {
     if (hash) {
       const el = document.getElementById(decodeURIComponent(hash.slice(1)))

@@ -5,11 +5,14 @@ import { MotionConfig } from 'motion/react'
 import './index.css'
 import { normalize, site } from './lib/content'
 import { ToastProvider } from './components/Toast'
+import { initClickTracking } from './lib/analytics'
 import Layout from './components/Layout'
 import Home, { NotFound } from './pages/Home'
 import Catalog from './pages/Catalog'
 import AppPage from './pages/AppPage'
 import About from './pages/About'
+
+initClickTracking()
 
 const AdminApp = lazy(() => import('./admin/AdminApp'))
 const PREVIEW_KEY = 'jl-preview'

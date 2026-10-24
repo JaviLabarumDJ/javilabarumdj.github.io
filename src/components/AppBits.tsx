@@ -58,6 +58,10 @@ export function DownloadHero({ app }: { app: AppEntry }) {
     <div className="flex w-full flex-col gap-3 sm:w-auto">
       <a
         href={href}
+        data-track={isRelease ? 'download' : 'open-repo'}
+        data-track-app={app.slug}
+        data-track-version={live.version}
+        data-track-where="hero"
         {...(isRelease ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
         className="group relative flex items-center gap-4 overflow-hidden rounded-2xl p-4 pr-6 text-bg shadow-[0_20px_60px_-15px_var(--accent)] transition hover:brightness-110 active:scale-[.99] sm:min-w-[360px]"
         style={{ background: 'linear-gradient(120deg, var(--accent), color-mix(in srgb, var(--accent) 60%, #fff))' }}
@@ -76,7 +80,7 @@ export function DownloadHero({ app }: { app: AppEntry }) {
         <span className="absolute inset-y-0 -left-1/2 w-1/3 skew-x-[-20deg] bg-white/30 transition-all duration-700 group-hover:left-[120%]" />
       </a>
       <div className="flex flex-wrap gap-2">
-        <button className="btn-ghost flex-1 !py-2.5" onClick={share}><Icon name="share" size={16} /> Compartir</button>
+        <button className="btn-ghost flex-1 !py-2.5" data-track="share" data-track-app={app.slug} onClick={share}><Icon name="share" size={16} /> Compartir</button>
         {live.latest ? (
           <a className="btn-ghost flex-1 !py-2.5" href="#novedades"><Icon name="tag" size={16} /> Novedades</a>
         ) : (
@@ -242,7 +246,7 @@ export function Changelog({ app }: { app: AppEntry }) {
                         <span className="sm:hidden">{formatDate(r.published_at)} ·</span>
                         {dl > 0 && <span>{formatNumber(dl)} descargas</span>}
                         <span className="flex-1" />
-                        {file && <a href={file.browser_download_url} className="btn-ghost !px-3 !py-1.5 !text-xs"><Icon name="download" size={14} /> {formatBytes(file.size)}</a>}
+                        {file && <a href={file.browser_download_url} data-track="download" data-track-app={app.slug} data-track-version={r.tag_name.replace(/-android$/, '')} data-track-where="changelog" className="btn-ghost !px-3 !py-1.5 !text-xs"><Icon name="download" size={14} /> {formatBytes(file.size)}</a>}
                         <a href={r.html_url} target="_blank" rel="noopener noreferrer" className="btn-ghost !px-3 !py-1.5 !text-xs">GitHub <Icon name="external" size={12} /></a>
                       </div>
                     </div>
@@ -296,7 +300,7 @@ export function AppCard({ app, index = 0 }: { app: AppEntry; index?: number }) {
         </div>
         <div className="relative z-10 mt-auto flex flex-wrap items-center gap-3 pt-6">
           <Link to={`/${app.slug}`} className="btn-primary">Ver app <Icon name="arrow" size={16} /></Link>
-          <a href={primaryHref(app, live)} className="btn-ghost" {...(app.primaryCta.type === 'release' ? {} : { target: '_blank', rel: 'noopener noreferrer' })}>
+          <a href={primaryHref(app, live)} className="btn-ghost" data-track={app.primaryCta.type === 'release' ? 'download' : 'open-repo'} data-track-app={app.slug} data-track-version={live.version} data-track-where="card" {...(app.primaryCta.type === 'release' ? {} : { target: '_blank', rel: 'noopener noreferrer' })}>
             <Icon name={app.primaryCta.type === 'release' ? 'download' : 'github'} size={16} />
             {app.primaryCta.type === 'release' ? live.size || 'Descargar' : 'GitHub'}
           </a>

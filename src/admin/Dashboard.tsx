@@ -7,7 +7,8 @@ import type { AppEntry } from '../lib/types'
 import type { Traffic, WorkflowRun } from './api'
 import { BarChart } from './BarChart'
 import { useAdmin } from './store'
-import { Panel } from './ui'
+import { Panel, Toggle } from './ui'
+import { ownVisits } from '../lib/analytics'
 
 function Stat({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
@@ -83,6 +84,61 @@ function Deploys() {
   )
 }
 
+const SHARE_KEY = 'jl-umami-share'
+
+function WebStats() {
+  const [share, setShare] = useState(() => { try { return localStorage.getItem(SHARE_KEY) ?? '' } catch { return '' } })
+  const [editing, setEditing] = useState(!share)
+  const [excluded, setExcluded] = useState(ownVisits.excluded)
+  const save = (v: string) => { try { v ? localStorage.setItem(SHARE_KEY, v) : localStorage.removeItem(SHARE_KEY) } catch { /* ignore */ } }
+  const valid = /^https:\/\/[^\s]+$/.test(share)
+
+  return (
+    <Panel
+      title="Estadísticas de la web"
+      desc="Visitas, procedencia, países y clics en botones (Umami, sin cookies)."
+      actions={<a href="https://cloud.umami.is" target="_blank" rel="noopener noreferrer" className="btn-ghost !px-3 !py-1.5 text-xs">Abrir Umami <Icon name="external" size={12} /></a>}
+    >
+      <div className="space-y-4">
+        {editing ? (
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <input
+              value={share}
+              onChange={(e) => setShare(e.target.value.trim())}
+              placeholder="Pega aquí tu Share URL de Umami (opcional)"
+              className="min-w-0 flex-1 rounded-lg border border-line bg-bg px-3 py-2.5 font-mono text-xs outline-none focus:border-cyan/60"
+            />
+            <button className="btn-primary !py-2 text-xs" disabled={!!share && !valid} onClick={() => { save(share); setEditing(!share) }}>Guardar</button>
+          </div>
+        ) : (
+          <div className="flex flex-wrap items-center gap-2">
+            <a href={share} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2.5"><Icon name="chart" size={16} /> Ver estadísticas</a>
+            <button className="btn-ghost !py-2.5 text-xs" onClick={() => setEditing(true)}>Cambiar enlace</button>
+          </div>
+        )}
+        <p className="text-xs text-ink-3">El enlace se guarda solo en este navegador, no en el repositorio público.</p>
+        <Toggle
+          label="No contar mis propias visitas desde este navegador"
+          checked={excluded}
+          onChange={(v) => { ownVisits.set(v); setExcluded(v) }}
+        />
+        <details className="text-xs text-ink-3">
+          <summary className="cursor-pointer text-ink-2">Eventos que se registran</summary>
+          <ul className="mt-2 grid gap-1 font-mono sm:grid-cols-2">
+            <li>download · descargas de APK (app, versión, dónde)</li>
+            <li>open-repo · clics a GitHub de una app</li>
+            <li>contact-instagram · contacto por Instagram</li>
+            <li>contact-phone · pulsaciones del teléfono</li>
+            <li>youtube-sessions · ir a tus sesiones</li>
+            <li>social · clics en tus redes (red, dónde)</li>
+            <li>share · compartir una app</li>
+          </ul>
+        </details>
+      </div>
+    </Panel>
+  )
+}
+
 export default function Dashboard() {
   const { draft, user } = useAdmin()
   const apps = draft.apps.filter((a) => a.repo)
@@ -98,6 +154,7 @@ export default function Dashboard() {
         <Stat label="Mixes" value={String(draft.mixes.length)} />
         <Stat label="Próximas fechas" value={String(draft.events.filter((e) => e.date >= new Date().toISOString().slice(0, 10)).length)} />
       </div>
+      <WebStats />
       <Deploys />
       {apps.map((a) => <AppStats key={a.slug} app={a} />)}
     </div>

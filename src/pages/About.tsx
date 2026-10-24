@@ -11,6 +11,7 @@ const social = (id: string) => site.socials.find((s) => s.id === id)
 const formatPhone = (p: string) => p.replace(/^(\+\d{2})(\d{3})(\d{2})(\d{2})(\d{2})$/, '$1 $2 $3 $4 $5')
 
 export function BookingCard({ compact = false }: { compact?: boolean }) {
+  const where = compact ? 'home' : 'about'
   const b = site.profile.booking
   const ig = social('instagram')
   if (!b?.enabled) return null
@@ -25,10 +26,10 @@ export function BookingCard({ compact = false }: { compact?: boolean }) {
         <h2 className={`font-extrabold ${compact ? 'text-2xl' : 'text-3xl sm:text-4xl'}`}>¿Pongo música en tu evento?</h2>
         <p className="mt-3 max-w-2xl text-ink-2 sm:text-lg">{b.text}</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          {dm && <a href={dm} target="_blank" rel="noopener noreferrer" className="btn-primary"><Icon name="instagram" size={16} /> Escríbeme por Instagram</a>}
-          {b.phone && <a href={`tel:${b.phone.replace(/\s/g, '')}`} className="btn-ghost"><Icon name="phone" size={16} /> {formatPhone(b.phone.replace(/\s/g, ''))}</a>}
-          {b.phone && b.whatsapp && <a href={`https://wa.me/${digits}`} target="_blank" rel="noopener noreferrer" className="btn-ghost"><Icon name="whatsapp" size={16} /> WhatsApp</a>}
-          {b.email && <a href={`mailto:${b.email}`} className="btn-ghost"><Icon name="mail" size={16} /> {b.email}</a>}
+          {dm && <a href={dm} data-track="contact-instagram" data-track-where={where} target="_blank" rel="noopener noreferrer" className="btn-primary"><Icon name="instagram" size={16} /> Escríbeme por Instagram</a>}
+          {b.phone && <a href={`tel:${b.phone.replace(/\s/g, '')}`} data-track="contact-phone" data-track-where={where} className="btn-ghost"><Icon name="phone" size={16} /> {formatPhone(b.phone.replace(/\s/g, ''))}</a>}
+          {b.phone && b.whatsapp && <a href={`https://wa.me/${digits}`} data-track="contact-whatsapp" data-track-where={where} target="_blank" rel="noopener noreferrer" className="btn-ghost"><Icon name="whatsapp" size={16} /> WhatsApp</a>}
+          {b.email && <a href={`mailto:${b.email}`} data-track="contact-email" data-track-where={where} className="btn-ghost"><Icon name="mail" size={16} /> {b.email}</a>}
         </div>
         <p className="mt-4 text-xs text-ink-3">Prefiero Instagram, pero también puedes llamarme.</p>
       </div>
@@ -40,7 +41,7 @@ export function YoutubeCta() {
   const yt = social('youtube')
   if (!yt) return null
   return (
-    <a href={yt.url} target="_blank" rel="noopener noreferrer" className="group card flex items-center gap-4 p-5 transition hover:border-[#ff0033]/40 sm:p-6">
+    <a href={yt.url} data-track="youtube-sessions" target="_blank" rel="noopener noreferrer" className="group card flex items-center gap-4 p-5 transition hover:border-[#ff0033]/40 sm:p-6">
       <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-[#ff0033]/15 text-[#ff4d6a] transition group-hover:scale-105"><Icon name="youtube" size={28} /></span>
       <span className="min-w-0 flex-1">
         <span className="block font-display text-lg font-bold">Escucha mis sesiones grabadas</span>

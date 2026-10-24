@@ -61,7 +61,7 @@ function StickyMobileCta({ app }: { app: AppEntry }) {
   if (app.primaryCta.type !== 'release') return null
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-bg/90 p-3 backdrop-blur-xl sm:hidden" style={{ paddingBottom: 'calc(.75rem + env(safe-area-inset-bottom))' }}>
-      <a href={live.downloadUrl} className="btn-primary w-full !py-3.5">
+      <a href={live.downloadUrl} data-track="download" data-track-app={app.slug} data-track-version={live.version} data-track-where="sticky" className="btn-primary w-full !py-3.5">
         <Icon name="download" size={18} /> {app.primaryCta.label} {live.size && <span className="font-mono text-xs opacity-75">· {live.size}</span>}
       </a>
     </div>

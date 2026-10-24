@@ -40,7 +40,7 @@ function Hero() {
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mt-10 flex flex-wrap gap-2">
             {site.socials.map((s) => (
-              <a key={s.id} href={s.url} target="_blank" rel="noopener noreferrer" className="chip !py-1.5 transition hover:border-line-strong hover:text-ink">
+              <a key={s.id} href={s.url} data-track="social" data-track-network={s.id} data-track-where="hero" target="_blank" rel="noopener noreferrer" className="chip !py-1.5 transition hover:border-line-strong hover:text-ink">
                 <Icon name={s.id} size={14} /> {s.label}
               </a>
             ))}
