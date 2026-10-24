@@ -151,15 +151,15 @@
       "icon": "assets/logo.svg",
       "cover": "assets/tablet_wave_mode.png",
       "tagline": "Tu cabina DJ en tu pantalla táctil",
-      "summary": "La cabina DJ open source más potente, portada a Android. Mezcla en pantallas táctiles con faders optimizados, ondas apiladas profesionales (Modo WAVE) y controladoras DJ USB plug-and-play.",
+      "summary": "La cabina DJ open source más potente, portada a Android. Ahora con nuevos skins (Classic y Booth estilo reproductor Pioneer), modo DJ táctil sin controladora, integración profunda con Rekordbox y compatibilidad total con DDJ-FLX4 y DDJ-400.",
       "description": "El legendario software open source **Mixxx** adaptado a pantallas táctiles y controladoras USB. Con el modo de ondas **WAVE de cabina**, **Split Cue** y motor de audio de 32 bits y baja latencia.",
       "tags": [
         "Android 10 – 15",
+        "Skin Booth (Pioneer)",
         "Modo WAVE",
+        "Rekordbox nativo",
         "USB MIDI OTG",
-        "Split Cue",
-        "Beatgrid táctil",
-        "Top Bar modular"
+        "Split Cue"
       ],
       "license": "GPL v2",
       "repo": "JaviLabarumDJ/mixxx-android",
@@ -169,16 +169,16 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.4.2",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.4.2-android/mixxx-android-v1.4.2.apk",
+        "version": "v1.5.0",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.5.0-android/mixxx-android-v1.5.0.apk",
         "size": "249 MB"
       },
       "badges": [
+        "Skins intercambiables (Classic y Booth)",
+        "Estilo cabina Pioneer / Rekordbox",
         "Probado en POCO X6 Pro y Lenovo Pad",
         "Firmado · sin publicidad",
-        "Código abierto GPL v2",
-        "UI fluida (1% CPU en reposo)",
-        "Top Bar configurable"
+        "Código abierto GPL v2"
       ],
       "screenshots": [
         {
@@ -214,52 +214,52 @@
       "featuresIntro": "No es un reproductor simplificado: es el motor nativo completo de Mixxx corriendo en Android con punto flotante de 32 bits y aceleración gráfica QML.",
       "features": [
         {
+          "icon": "🎛️",
+          "title": "Nuevo Skin Booth estilo Pioneer",
+          "text": "Interfaz inspirada en los reproductores de cabina profesionales: pestañas WAVE, DJ, BROWSE, BEAT FX y UTILITY con cambio instantáneo.",
+          "pill": "Novedad v1.5.0"
+        },
+        {
+          "icon": "🎧",
+          "title": "Modo DJ táctil autónomo",
+          "text": "Pincha sin controladora física con jogs virtuales, pads de performance (Hot Cue, Beat Jump, Beat Loop), mixer y crossfader.",
+          "pill": "Pads + Jog táctil"
+        },
+        {
+          "icon": "⚡",
+          "title": "Rejillas y Cues Rekordbox al cargar",
+          "text": "Carga pistas directamente desde pendrives de Rekordbox importando al instante sus beatgrids exactos, cues, key y colores.",
+          "pill": "Integración Rekordbox"
+        },
+        {
           "icon": "🌊",
           "title": "Modo WAVE de cabina",
           "text": "Ondas apiladas RGB en tiempo real para beatmatching visual, reloj digital (REMAIN/TIME), tempo exacto (±0.00%) y salto táctil por aguja.",
           "pill": "Ondas apiladas"
         },
         {
-          "icon": "🎚️",
-          "title": "Mesa táctil y faders mejorados",
-          "text": "Faders de volumen y pitch sin tirones, recentrado al 0.0% con doble toque, EQ de 3 bandas y Quick Filters dedicados.",
-          "pill": "Multi-touch 120 Hz"
-        },
-        {
           "icon": "🔌",
-          "title": "Controladoras USB plug & play",
-          "text": "Conecta tu controladora (DDJ, Traktor Kontrol, Hercules, Numark…) por USB-C OTG con detección automática y sin drivers.",
-          "pill": "USB OTG host"
-        },
-        {
-          "icon": "🎧",
-          "title": "Split Cue (preescucha)",
-          "text": "¿Sin tarjeta de sonido externa? Activa SPLIT para enviar la preescucha por un auricular y el máster por el otro.",
-          "pill": "Auriculares estándar"
+          "title": "Pioneer DDJ-FLX4 y DDJ-400 nativos",
+          "text": "Opciones completas de comportamiento Rekordbox: Memory Cues, Pad FX, Key Lock en SHIFT+SYNC, Fader Start e Instant Doubles.",
+          "pill": "USB MIDI Plug & Play"
         },
         {
           "icon": "🎯",
           "title": "Ajuste táctil de rejilla (Beatgrid)",
-          "text": "Toca el BPM o el botón Rejilla para corregir la cuadrícula al vuelo: desfase de medio beat, primer tiempo, ajuste fino antes/después y bloqueo de BPM.",
+          "text": "Toca el BPM o el botón Rejilla para corregir al vuelo: corrección para bombos de House/Techno, downbeat, ajuste fino y bloqueo.",
           "pill": "Beatgrid Popup"
         },
         {
-          "icon": "📂",
-          "title": "Navegación y listas Rekordbox",
-          "text": "Explora con la rueda BROWSE, mantén las fechas de adición de Rekordbox y ordena por la nueva columna # de posición.",
-          "pill": "Biblioteca USB"
-        },
-        {
-          "icon": "⚡",
+          "icon": "🚀",
           "title": "Máxima fluidez y bajo consumo",
-          "text": "Redibujado dinámico de ondas a demanda: la CPU en reposo baja del 74% a apenas un 1%, sin microcortes de audio.",
-          "pill": "Optimización v1.4.2"
+          "text": "Renderizado dinámico de ondas a demanda: la CPU en reposo cae al 1%, sin modo desarrollador ni bloqueos de escritura en disco.",
+          "pill": "1% CPU en reposo"
         },
         {
-          "icon": "🧭",
-          "title": "Barra superior personalizada",
-          "text": "Elige en Ajustes qué vistas (DJ, WAVE, LIB, CTL) y botones de acción (LOAD, FX, SPLIT, etc.) quieres visibles.",
-          "pill": "Top Bar Modular"
+          "icon": "🎚️",
+          "title": "Split Cue y barra modular",
+          "text": "Preescucha estéreo dividida para auriculares sin tarjeta externa, y barra superior 100% personalizable desde Ajustes.",
+          "pill": "Split Cue + Top Bar"
         }
       ],
       "stepsTitle": "Instálalo en 3 pasos",
