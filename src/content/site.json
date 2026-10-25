@@ -169,8 +169,8 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.5.1",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.5.1-android/mixxx-android-v1.5.1.apk",
+        "version": "v1.5.2",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.5.2-android/mixxx-android-v1.5.2.apk",
         "size": "249 MB"
       },
       "badges": [
@@ -239,8 +239,8 @@
         },
         {
           "icon": "🔌",
-          "title": "Pioneer DDJ-FLX4 y DDJ-400 nativos",
-          "text": "Opciones completas de comportamiento Rekordbox: Memory Cues, Pad FX, Key Lock en SHIFT+SYNC, Fader Start e Instant Doubles.",
+          "title": "Pioneer DDJ-FLX4 (SMART CFX) y DDJ-400",
+          "text": "SMART CFX dedicado, protección contra saltos de TRIM, Memory Cues, Pad FX, Key Lock en SHIFT+SYNC e Instant Doubles.",
           "pill": "USB MIDI Plug & Play"
         },
         {
