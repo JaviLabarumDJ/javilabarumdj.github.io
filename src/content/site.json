@@ -159,7 +159,8 @@
         "Modo WAVE",
         "Rekordbox nativo",
         "USB MIDI OTG",
-        "Split Cue"
+        "Split Cue",
+        "Auto-actualizable"
       ],
       "license": "GPL v2",
       "repo": "JaviLabarumDJ/mixxx-android",
@@ -169,8 +170,8 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.5.3",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.5.3-android/mixxx-android-v1.5.3.apk",
+        "version": "v1.5.4",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.5.4-android/mixxx-android-v1.5.4.apk",
         "size": "236 MB"
       },
       "badges": [
@@ -178,7 +179,8 @@
         "Estilo cabina Pioneer / Rekordbox",
         "Probado en POCO X6 Pro y Lenovo Pad",
         "Firmado · sin publicidad",
-        "Código abierto GPL v2"
+        "Código abierto GPL v2",
+        "Actualizaciones desde la app"
       ],
       "screenshots": [
         {
@@ -230,6 +232,12 @@
           "title": "Rejillas y Cues Rekordbox al cargar",
           "text": "Carga pistas directamente desde pendrives de Rekordbox importando al instante sus beatgrids exactos, cues, key y colores.",
           "pill": "Integración Rekordbox"
+        },
+        {
+          "icon": "🔄",
+          "title": "Actualizaciones desde la app",
+          "text": "Mixxx detecta y descarga nuevas versiones en segundo plano con verificación SHA-256 e instalación directa en un toque.",
+          "pill": "Novedad v1.5.4"
         },
         {
           "icon": "🌊",
