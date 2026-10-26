@@ -170,8 +170,8 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.5.4",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.5.4-android/mixxx-android-v1.5.4.apk",
+        "version": "v1.5.5",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.5.5-android/mixxx-android-v1.5.5.apk",
         "size": "236 MB"
       },
       "badges": [
@@ -180,7 +180,8 @@
         "Probado en POCO X6 Pro y Lenovo Pad",
         "Firmado · sin publicidad",
         "Código abierto GPL v2",
-        "Actualizaciones desde la app"
+        "Actualizaciones desde la app",
+        "Grabación REC y DDJ-400 avanzado"
       ],
       "screenshots": [
         {
@@ -247,9 +248,9 @@
         },
         {
           "icon": "🔌",
-          "title": "Pioneer DDJ-FLX4 (SMART CFX) y DDJ-400",
-          "text": "SMART CFX dedicado, protección contra saltos de TRIM, Memory Cues, Pad FX, Key Lock en SHIFT+SYNC e Instant Doubles.",
-          "pill": "USB MIDI Plug & Play"
+          "title": "Pioneer DDJ-FLX4 y DDJ-400 avanzado",
+          "text": "Modos Rekordbox avanzados: Memory Cues (CUE/LOOP CALL), 4 BEAT EXIT, Beat Sync master, SMART CFX / LEVEL DEPTH, Fader Start e Instant Doubles.",
+          "pill": "Novedad v1.5.5"
         },
         {
           "icon": "🎯",
@@ -265,9 +266,9 @@
         },
         {
           "icon": "🎚️",
-          "title": "Split Cue y barra modular",
-          "text": "Preescucha estéreo dividida para auriculares sin tarjeta externa, y barra superior 100% personalizable desde Ajustes.",
-          "pill": "Split Cue + Top Bar"
+          "title": "Grabación REC, Split Cue y filtros Booth",
+          "text": "Pestaña REC con tiempo real sincronizado, parada protegida, knobs de FILTER dedicados en mixer Booth y Split Cue para auriculares.",
+          "pill": "Mejoras v1.5.5"
         }
       ],
       "stepsTitle": "Instálalo en 3 pasos",
