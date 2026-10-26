@@ -154,7 +154,7 @@
       "summary": "La cabina DJ open source más potente, portada a Android. Ahora con nuevos skins (Classic y Booth estilo reproductor Pioneer), modo DJ táctil sin controladora, integración profunda con Rekordbox y compatibilidad total con DDJ-FLX4 y DDJ-400.",
       "description": "El legendario software open source **Mixxx** adaptado a pantallas táctiles y controladoras USB. Con el modo de ondas **WAVE de cabina**, **Split Cue** y motor de audio de 32 bits y baja latencia.",
       "tags": [
-        "Android 10 – 15",
+        "Android 14 – 15",
         "Skin Booth (Pioneer)",
         "Modo WAVE",
         "Rekordbox nativo",
@@ -169,9 +169,9 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.5.2",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.5.2-android/mixxx-android-v1.5.2.apk",
-        "size": "249 MB"
+        "version": "v1.5.3",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.5.3-android/mixxx-android-v1.5.3.apk",
+        "size": "236 MB"
       },
       "badges": [
         "Skins intercambiables (Classic y Booth)",
@@ -281,8 +281,8 @@
         {
           "icon": "📱",
           "component": "Sistema operativo",
-          "min": "Android 10 (API 29)",
-          "rec": "Android 13, 14 o 15",
+          "min": "Android 14 (API 34)",
+          "rec": "Android 14 o 15",
           "recDetail": "HyperOS, OneUI, Pixel OS, ZUI"
         },
         {
