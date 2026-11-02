@@ -151,15 +151,15 @@
       "icon": "assets/logo.svg",
       "cover": "assets/tablet_wave_mode.png",
       "tagline": "Tu cabina DJ en tu pantalla táctil",
-      "summary": "La cabina DJ open source más potente, portada a Android. Ahora con nuevos skins (Classic y Booth estilo reproductor Pioneer), modo DJ táctil sin controladora, integración profunda con Rekordbox y compatibilidad total con DDJ-FLX4 y DDJ-400.",
+      "summary": "La cabina DJ open source más potente, portada a Android. Ahora con separación de STEMS por IA en el dispositivo (Voz, Batería, Bajo, Melodía), formas de onda fluidas por GPU a 90/120 Hz, nueva skin Lite de ultra-bajo consumo y compatibilidad desde Android 10.",
       "description": "El legendario software open source **Mixxx** adaptado a pantallas táctiles y controladoras USB. Con el modo de ondas **WAVE de cabina**, **Split Cue** y motor de audio de 32 bits y baja latencia.",
       "tags": [
-        "Android 14 – 15",
-        "Skin Booth (Pioneer)",
-        "Modo WAVE",
+        "Android 10 – 16",
+        "Separación de STEMS",
+        "Skins Booth & Lite",
+        "Ondas fluidas por GPU",
         "Rekordbox nativo",
         "USB MIDI OTG",
-        "Split Cue",
         "Auto-actualizable"
       ],
       "license": "GPL v2",
@@ -170,18 +170,19 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.5.5",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.5.5-android/mixxx-android-v1.5.5.apk",
-        "size": "236 MB"
+        "version": "v1.6.0",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.6.0-android/mixxx-android-v1.6.0.apk",
+        "size": "272 MB"
       },
       "badges": [
-        "Skins intercambiables (Classic y Booth)",
-        "Estilo cabina Pioneer / Rekordbox",
-        "Probado en POCO X6 Pro y Lenovo Pad",
+        "Separación de STEMS por IA en local",
+        "Ondas fluidas por GPU (70–90 FPS)",
+        "Skin Lite de bajo consumo (5% CPU)",
+        "Skins intercambiables (Classic, Booth, Lite)",
+        "Compatible desde Android 10",
         "Firmado · sin publicidad",
         "Código abierto GPL v2",
-        "Actualizaciones desde la app",
-        "Grabación REC y DDJ-400 avanzado"
+        "Actualizaciones desde la app"
       ],
       "screenshots": [
         {
@@ -216,6 +217,24 @@
       "featuresTitle": "Diseñado por y para DJs",
       "featuresIntro": "No es un reproductor simplificado: es el motor nativo completo de Mixxx corriendo en Android con punto flotante de 32 bits y aceleración gráfica QML.",
       "features": [
+        {
+          "icon": "🎚️",
+          "title": "Separación de STEMS por IA en local",
+          "text": "Separa cualquier canción en batería, bajo, voces y melodía en tu dispositivo con Spleeter o HTDemucs sin conexión a internet. Controla y aísla cada stem desde los pads táctiles.",
+          "pill": "Novedad v1.6.0"
+        },
+        {
+          "icon": "⚡",
+          "title": "Formas de onda fluidas por GPU (70–90 FPS)",
+          "text": "Renderizado directo en GPU con shaders GLSL y sincronización con el refresco nativo de la pantalla (60, 90 o 120 Hz) para un movimiento de ondas ultra suave.",
+          "pill": "GPU Shaders"
+        },
+        {
+          "icon": "🪶",
+          "title": "Skin Lite para máximo ahorro y batería",
+          "text": "Interfaz ligera sin ondas pesadas que consume solo el 5% de CPU y ahorra 150 MB de memoria, ideal para sesiones maratonianas o dispositivos modestos.",
+          "pill": "Skin Lite"
+        },
         {
           "icon": "🎛️",
           "title": "Nuevo Skin Booth estilo Pioneer",
