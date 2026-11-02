@@ -483,6 +483,109 @@
           "a": "Claro. Los archivos quedan en la carpeta que elijas (ordenador o NAS). Cópialos al móvil o a un pendrive USB OTG y cárgalos en Mixxx para Android."
         }
       ]
+    },
+    {
+      "slug": "trackid",
+      "published": true,
+      "name": "TrackID",
+      "shortName": "TrackID",
+      "accent": "green",
+      "category": "audio",
+      "icon": "assets/trackid/logo.svg",
+      "cover": "assets/trackid/hero.svg",
+      "tagline": "De set de YouTube a tracklist con timestamps",
+      "summary": "Herramienta autoalojada y open source que analiza cualquier sesión de DJ en YouTube y genera un tracklist completo con tiempos exactos y exportación a M3U, CSV y TXT.",
+      "description": "TrackID procesa cualquier sesión de DJ o mix de YouTube. Detecta los cambios de tema por transitorios y caídas de volumen, identifica cada pista con Shazam sin llamadas redundantes gracias a su caché local SQLite y genera un tracklist con timestamps exactos. Exporta directamente a **M3U** (listo para Mixxx, Rekordbox o VLC), **CSV**, **JSON** o texto plano.",
+      "tags": [
+        "YouTube DJ Sets",
+        "Shazam API",
+        "M3U Export",
+        "Docker",
+        "Mixxx Compatible"
+      ],
+      "license": "MIT",
+      "repo": "JaviLabarumDJ/trackid",
+      "assetPattern": "",
+      "primaryCta": {
+        "label": "Ver en GitHub",
+        "type": "repo"
+      },
+      "fallback": {
+        "version": "v1.0.0",
+        "url": "https://github.com/JaviLabarumDJ/trackid",
+        "size": ""
+      },
+      "badges": [
+        "Self-hosted",
+        "Docker Compose",
+        "Código abierto MIT"
+      ],
+      "screenshots": [
+        {
+          "src": "assets/trackid/hero.svg",
+          "label": "Panel",
+          "icon": "🎧",
+          "title": "Analizador de sesiones YouTube a Tracklist",
+          "caption": "Detección acústica · Timestamps · Exportación M3U"
+        }
+      ],
+      "featuresTitle": "Tus tracklists en minutos",
+      "featuresIntro": "Diseñado para DJs, selectores y oyentes que quieren descubrir y guardar cada tema de una sesión sin perder horas buscando.",
+      "features": [
+        {
+          "icon": "⚡",
+          "title": "Detección automática de transiciones",
+          "text": "Analiza caídas de volumen relativas y transitorios de percusión para identificar exactamente cuándo entra una nueva mezcla.",
+          "pill": "Transitorios + Caídas"
+        },
+        {
+          "icon": "🔍",
+          "title": "Reconocimiento con Shazam y caché SQLite",
+          "text": "Identifica cada segmento con la API de Shazam. Los resultados se guardan en una base de datos local SQLite para no repetir consultas.",
+          "pill": "Shazam + SQLite"
+        },
+        {
+          "icon": "📋",
+          "title": "Exportación directa a M3U para Mixxx",
+          "text": "Genera listas de reproducción M3U listas para arrastrar a Mixxx, Rekordbox o VLC, además de CSV ordenado y texto para YouTube.",
+          "pill": "M3U / CSV / TXT"
+        },
+        {
+          "icon": "🐳",
+          "title": "Despliegue inmediato con Docker",
+          "text": "Backend en FastAPI con Server-Sent Events (SSE) para ver el progreso en tiempo real de cada paso del análisis.",
+          "pill": "Docker + SSE"
+        }
+      ],
+      "stepsTitle": "En marcha en 3 pasos",
+      "steps": [
+        {
+          "title": "Clona el repositorio",
+          "text": "Descarga el código en tu equipo o servidor.",
+          "code": "git clone https://github.com/JaviLabarumDJ/trackid.git && cd trackid"
+        },
+        {
+          "title": "Inicia con Docker Compose",
+          "text": "Levanta la interfaz web y el worker en segundo plano.",
+          "code": "docker compose up -d"
+        },
+        {
+          "title": "Pega la URL del set",
+          "text": "Abre http://localhost:8000 en tu navegador, pega el enlace del set de YouTube y pulsa Analizar."
+        }
+      ],
+      "specs": [],
+      "tip": "**Consejo para sesiones largas:** TrackID cachea las firmas acústicas en SQLite. Si vuelves a analizar la misma sesión o segmentos repetidos, el reconocimiento es prácticamente instantáneo.",
+      "faq": [
+        {
+          "q": "¿Qué tipo de sesiones de YouTube puedo analizar?",
+          "a": "Cualquier vídeo o sesión pública de YouTube (Boiler Room, Cercle, grabaciones de festivales o sets de cabina). yt-dlp extraerá únicamente la pista de audio optimizada."
+        },
+        {
+          "q": "¿Es compatible el archivo M3U con Mixxx?",
+          "a": "Sí. Puedes importar el archivo .m3u generado directamente en Mixxx para crear una lista de reproducción con los temas detectados que ya tengas en tu biblioteca local."
+        }
+      ]
     }
   ]
 }
