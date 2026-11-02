@@ -170,13 +170,13 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.6.0",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.6.0-android/mixxx-android-v1.6.0.apk",
+        "version": "v1.6.1",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.6.1-android/mixxx-android-v1.6.1.apk",
         "size": "272 MB"
       },
       "badges": [
         "Separación de STEMS por IA en local",
-        "Ondas fluidas por GPU (70–90 FPS)",
+        "Ondas fluidas en cada refresco (hasta 120 FPS)",
         "Skin Lite de bajo consumo (5% CPU)",
         "Skins intercambiables (Classic, Booth, Lite)",
         "Compatible desde Android 10",
@@ -225,9 +225,9 @@
         },
         {
           "icon": "⚡",
-          "title": "Formas de onda fluidas por GPU (70–90 FPS)",
-          "text": "Renderizado directo en GPU con shaders GLSL y sincronización con el refresco nativo de la pantalla (60, 90 o 120 Hz) para un movimiento de ondas ultra suave.",
-          "pill": "GPU Shaders"
+          "title": "Formas de onda fluidas en cada refresco (hasta 120 FPS)",
+          "text": "En la v1.6.1 las ondas se dibujan en cada ciclo de refresco nativo del panel (120 FPS en pantallas de alta tasa o 45 FPS constantes y adaptativos) para una fluidez absoluta en cabina.",
+          "pill": "Hasta 120 FPS"
         },
         {
           "icon": "🪶",
