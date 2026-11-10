@@ -170,12 +170,16 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.6.1",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.6.1-android/mixxx-android-v1.6.1.apk",
+        "version": "v1.7.0",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.7.0-android/mixxx-android-v1.7.0.apk",
         "size": "272 MB"
       },
       "badges": [
+        "FX Station (Remix Effector tipo RMX-1000)",
+        "Streaming Deezer con descargas y ARL",
         "Separación de STEMS por IA en local",
+        "Soporte Multi-USB Audio (2 CDJs externos)",
+        "Mapeo MIDI visual en Android (Learn)",
         "Ondas fluidas en cada refresco (hasta 120 FPS)",
         "Skin Lite de bajo consumo (5% CPU)",
         "Skins intercambiables (Classic, Booth, Lite)",
@@ -218,7 +222,31 @@
       "featuresIntro": "No es un reproductor simplificado: es el motor nativo completo de Mixxx corriendo en Android con punto flotante de 32 bits y aceleración gráfica QML.",
       "features": [
         {
+          "icon": "🎛️",
+          "title": "FX Station: Remix Effector integrado (estilo RMX-1000)",
+          "text": "Potente unidad de efectos para la mezcla principal en el hilo de audio en tiempo real: Scene FX (build-ups y break-downs), Isolate FX en 3 bandas, X-Pad con redobles de batería y Release FX con paradas y ecos.",
+          "pill": "Novedad v1.7.0"
+        },
+        {
+          "icon": "🎧",
+          "title": "Streaming Deezer nativo y descargas completas",
+          "text": "Busca y reproduce el catálogo de Deezer directamente desde la librería. Compatible con tu cookie ARL personal para descargas de audio completas y descifrado Blowfish en tiempo real.",
+          "pill": "Novedad v1.7.0"
+        },
+        {
+          "icon": "💿",
+          "title": "Audio Multi-USB y preset para 2 CDJs externos",
+          "text": "Controla múltiples tarjetas de sonido USB simultáneamente con remuestreo adaptativo y asigna Deck 1 y Deck 2 a reproductores independientes conectados a una mesa de mezclas externa.",
+          "pill": "Novedad v1.7.0"
+        },
+        {
           "icon": "🎚️",
+          "title": "Asistente de mapeo MIDI visual (Learn Controller)",
+          "text": "Mapea cualquier controladora física directamente desde la tablet o móvil: selecciona la función de Mixxx y pulsa o mueve el control hardware.",
+          "pill": "Novedad v1.7.0"
+        },
+        {
+          "icon": "🥁",
           "title": "Separación de STEMS por IA en local",
           "text": "Separa cualquier canción en batería, bajo, voces y melodía en tu dispositivo con Spleeter o HTDemucs sin conexión a internet. Controla y aísla cada stem desde los pads táctiles.",
           "pill": "Novedad v1.6.0"
