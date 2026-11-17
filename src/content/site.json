@@ -170,11 +170,17 @@
         "type": "release"
       },
       "fallback": {
-        "version": "v1.7.0",
-        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.7.0-android/mixxx-android-v1.7.0.apk",
+        "version": "v1.8.0",
+        "url": "https://github.com/JaviLabarumDJ/mixxx-android/releases/download/v1.8.0-android/mixxx-android-v1.8.0.apk",
         "size": "272 MB"
       },
       "badges": [
+        "Groove Station (Secuenciador 16 steps y drum pads)",
+        "Soporte Novation Launchpad X por USB",
+        "Estación de 16 Samplers con audio propio",
+        "Lectura directa de pendrives Rekordbox y Engine DJ",
+        "Matriz de audio y Timecode DVS",
+        "Reproducción en segundo plano",
         "FX Station (Remix Effector tipo RMX-1000)",
         "Streaming Deezer con descargas y ARL",
         "Separación de STEMS por IA en local",
@@ -221,6 +227,42 @@
       "featuresTitle": "Diseñado por y para DJs",
       "featuresIntro": "No es un reproductor simplificado: es el motor nativo completo de Mixxx corriendo en Android con punto flotante de 32 bits y aceleración gráfica QML.",
       "features": [
+        {
+          "icon": "🥁",
+          "title": "Groove Station: Secuenciador y caja de ritmos en vivo",
+          "text": "Secuenciador de 16 pasos y 8 pistas sincronizado con el compás de la pista en reproducción. Incluye kits analógicos sintetizados (estilo 808/909), carga de kits personalizados de usuario, swing, note repeat y pads táctiles para finger drumming.",
+          "pill": "Novedad v1.8.0"
+        },
+        {
+          "icon": "🎛️",
+          "title": "Soporte oficial Novation Launchpad X y controladoras",
+          "text": "Integración completa plug & play para Novation Launchpad X en modo DAW Session: iluminación RGB, cursor de compás en vivo por los pads, disparo con sensibilidad táctil (velocity), muting y cambio de patrones desde el hardware.",
+          "pill": "Novedad v1.8.0"
+        },
+        {
+          "icon": "🎶",
+          "title": "Estación de 16 Samplers independientes",
+          "text": "Dos bancos de 8 samplers con vúmetros dedicados, control de ganancia, bucle, PFL y asignación directa desde la biblioteca o pendrives USB con soporte WAV, MP3, FLAC y OGG.",
+          "pill": "Novedad v1.8.0"
+        },
+        {
+          "icon": "🔌",
+          "title": "Matriz de enrutamiento de audio pro y Timecode DVS",
+          "text": "Rutea cualquier entrada o salida (Master, Auriculares/CUE, Decks 1-4, Samplers, Micro y Timecode) a cualquier canal físico USB en estéreo o mono. Soporte de vinilos y CDs de código de tiempo.",
+          "pill": "Novedad v1.8.0"
+        },
+        {
+          "icon": "💾",
+          "title": "Navegación directa de pendrives Rekordbox & Engine DJ",
+          "text": "Conecta tus pendrives USB en formato FAT32 y accede directamente a tus playlists preparadas, carpetas y Hot Cues de Rekordbox y Engine DJ.",
+          "pill": "Novedad v1.8.0"
+        },
+        {
+          "icon": "📱",
+          "title": "Reproducción en segundo plano (Background Playback)",
+          "text": "La música continúa sonando sin interrupciones con la pantalla apagada o mientras utilizas otras aplicaciones gracias al nuevo servicio de primer plano.",
+          "pill": "Novedad v1.8.0"
+        },
         {
           "icon": "🎛️",
           "title": "FX Station: Remix Effector integrado (estilo RMX-1000)",
