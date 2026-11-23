@@ -441,28 +441,30 @@
       "icon": "assets/tidownloader/logo.svg",
       "cover": "assets/tidownloader/search.png",
       "tagline": "Tu música en FLAC sin pérdida",
-      "summary": "Descargador autoalojado para tu suscripción de Tidal. Busca temas, álbumes o playlists y descárgalos en FLAC lossless o MP3 320 kbps directamente a tu carpeta de música.",
-      "description": "Descargador autoalojado para tu suscripción de Tidal. Descarga pistas, álbumes y playlists en **FLAC lossless** o **MP3 a 320 kbps** directamente a tu ordenador para cargarlas en Mixxx.",
+      "summary": "Descargador autoalojado para tu suscripción de Tidal. Ahora con ejecutables portables de 1 clic para Windows, macOS y Linux o contenedor Docker. Descarga en FLAC lossless o MP3 320 kbps directamente a tu carpeta de música.",
+      "description": "Descargador autoalojado para tu suscripción de Tidal. Descarga pistas, álbumes y playlists en **FLAC lossless** o **MP3 a 320 kbps** directamente a tu ordenador para cargarlas en Mixxx o Rekordbox. Ahora con ejecutables autónomos para **Windows**, **macOS** y **Linux** sin necesidad de Docker ni Python.",
       "tags": [
         "FLAC lossless",
         "MP3 320k",
+        "Ejecutables Win/Mac/Linux",
         "Docker",
         "Sincronización local"
       ],
       "license": "MIT",
       "repo": "JaviLabarumDJ/tidownloader",
-      "assetPattern": "",
+      "assetPattern": "windows.*\\.zip$",
       "primaryCta": {
-        "label": "Ver en GitHub",
-        "type": "repo"
+        "label": "Descargar v0.1.0",
+        "type": "release"
       },
       "fallback": {
-        "version": "",
-        "url": "https://github.com/JaviLabarumDJ/tidownloader",
-        "size": ""
+        "version": "v0.1.0",
+        "url": "https://github.com/JaviLabarumDJ/tidownloader/releases/tag/v0.1.0",
+        "size": "34 MB"
       },
       "badges": [
-        "Self-hosted",
+        "Ejecutables Windows, macOS y Linux",
+        "Self-hosted & Docker",
         "Sin guardar contraseñas",
         "Código abierto MIT"
       ],
@@ -500,6 +502,12 @@
       "featuresIntro": "Para DJs y audiófilos que necesitan que cada tema suene perfecto en sistemas de sonido profesionales.",
       "features": [
         {
+          "icon": "⚡",
+          "title": "Ejecutables portables de 1 clic",
+          "text": "Versiones autónomas para Windows (.exe), macOS y Linux. No necesitas instalar Python ni Docker para empezar a descargar.",
+          "pill": "Win / macOS / Linux"
+        },
+        {
           "icon": "💎",
           "title": "Calidad FLAC de estudio",
           "text": "FLAC lossless, M4A AAC 320 kbps o MP3 320 kbps. Si un tema no tiene Hi-Res, pasa automáticamente a lossless.",
@@ -527,18 +535,19 @@
       "stepsTitle": "En marcha en 2 minutos",
       "steps": [
         {
-          "title": "Clona el repositorio",
-          "text": "Descarga el código en tu máquina.",
-          "code": "git clone https://github.com/JaviLabarumDJ/tidownloader.git && cd tidownloader"
+          "title": "Descarga el ejecutable portable",
+          "text": "Descarga el archivo zip o tar.gz para tu sistema (Windows, macOS o Linux) desde las releases de GitHub.",
+          "code": "https://github.com/JaviLabarumDJ/tidownloader/releases/tag/v0.1.0"
         },
         {
-          "title": "Arranca con Docker",
-          "text": "Levanta el contenedor en segundo plano.",
-          "code": "docker compose up -d"
+          "title": "Descomprime y ejecuta",
+          "text": "Ejecuta tidownloader-web (o tidownloader en terminal). Se abrirá la interfaz gráfica en tu navegador.",
+          "code": "./tidownloader-web"
         },
         {
-          "title": "Abre el navegador",
-          "text": "Entra en http://localhost:8000, vincula tu cuenta y empieza a descargar."
+          "title": "O arranca con Docker",
+          "text": "Si prefieres ejecutarlo como servicio en segundo plano o en un NAS con Docker Compose.",
+          "code": "git clone https://github.com/JaviLabarumDJ/tidownloader.git && cd tidownloader && docker compose up -d"
         }
       ],
       "specs": [],
