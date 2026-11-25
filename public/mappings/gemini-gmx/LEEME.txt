@@ -1,0 +1,33 @@
+======================================================================
+  Mapeo MIDI Gemini GMX para Mixxx DJ (Android y PC)
+  Autor: @luchomateo (basado en mapeo original de Miss)
+  Web oficial: https://javilabarumdj.com/software/mixxx
+======================================================================
+
+DESCRIPCIÓN:
+Mapeo MIDI completo y optimizado para la controladora Gemini GMX en Mixxx.
+Incluye:
+- Control completo de 2 Decks (Play/Pause, Cue, Pitch Bend, Jog Scratch/Vinyl).
+- 4 modos de pads: HotCues, AutoLoop, Sampler y Remix FX Station.
+- FX Station integrada: redobles de batería (Clap/Snare) y Scene FX.
+- Crossfader centrado por defecto para mezcla de club precisa con faders de canal.
+- Feedback visual completo por LEDs en botones y pads.
+
+INSTALACIÓN:
+
+1. EN ANDROID (Mixxx DJ para Android por JaviLabarumDJ):
+   Este mapeo ya viene preinstalado e integrado de serie en las últimas
+   versiones de la aplicación. Basta con conectar la controladora Gemini GMX
+   mediante cable USB OTG y activarla desde Preferencias -> Controladoras.
+
+2. EN PC / MAC / LINUX (Mixxx Oficial):
+   - Copia los dos archivos siguientes:
+       * "Gemini GMX v2 MIDI.midi.xml"
+       * "Gemini-GMX-v2-MIDI.js"
+   - Pégalos en la carpeta de mapeos de usuario de Mixxx:
+       * Windows: %LOCALAPPDATA%\Mixxx\controllers
+       * Linux: ~/.mixxx/controllers
+       * macOS: ~/Library/Application Support/Mixxx/controllers
+   - Abre Mixxx, ve a Opciones -> Preferencias -> Controladoras, selecciona
+     Gemini GMX y activa el mapeo "Gemini GMX (MIDI) - @luchomateo".
+======================================================================

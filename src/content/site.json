@@ -177,6 +177,7 @@
       "badges": [
         "Groove Station (Secuenciador 16 steps y drum pads)",
         "Soporte Novation Launchpad X por USB",
+        "Mapeo Gemini GMX oficial (@luchomateo)",
         "Estación de 16 Samplers con audio propio",
         "Lectura directa de pendrives Rekordbox y Engine DJ",
         "Matriz de audio y Timecode DVS",
@@ -238,6 +239,12 @@
           "title": "Soporte oficial Novation Launchpad X y controladoras",
           "text": "Integración completa plug & play para Novation Launchpad X en modo DAW Session: iluminación RGB, cursor de compás en vivo por los pads, disparo con sensibilidad táctil (velocity), muting y cambio de patrones desde el hardware.",
           "pill": "Novedad v1.8.0"
+        },
+        {
+          "icon": "🎛️",
+          "title": "Mapeo oficial Gemini GMX (por @luchomateo)",
+          "text": "Integración completa plug & play para la controladora Gemini GMX: control de 2 decks, jog wheel táctil con pitch bend y vinilo/scratch, 4 modos de pads (Hot Cues, Auto Loops, Sampler y Remix FX Station con redobles y escenas) y faders protegidos.",
+          "pill": "Mapeo @luchomateo"
         },
         {
           "icon": "🎶",
@@ -428,6 +435,10 @@
         {
           "q": "¿Puedo conectar mi controladora DJ por USB?",
           "a": "Sí. Conecta un adaptador USB-C OTG y enchufa tu controladora (DDJ, Traktor Kontrol, Hercules, Numark…). La app la detecta y pide los permisos USB en pantalla."
+        },
+        {
+          "q": "¿Cómo usar o descargar el mapeo para Gemini GMX de @luchomateo?",
+          "a": "El mapeo viene preinstalado e integrado de serie en Mixxx Android. Si deseas descargarlo por separado para Mixxx en PC o Mac, puedes [descargar el paquete del mapeo Gemini GMX aquí](/mappings/gemini-gmx/gemini-gmx-mixxx-mapping.zip) e incluir los archivos en tu carpeta `controllers` de Mixxx."
         }
       ]
     },
